@@ -1,0 +1,9 @@
+#!/usr/bin/make -f
+
+export CFLAGS=-O2 -fno-strict-aliasing -fno-strict-overflow -fsigned-char
+
+%:
+	dh $@ --with autoreconf
+
+override_dh_autoreconf:
+	dh_autoreconf ./autogen.sh

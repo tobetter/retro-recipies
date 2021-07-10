@@ -1,0 +1,31 @@
+Source: advancemame
+Section: non-free/games
+Priority: optional
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+XSBC-Original-Maintainer: Cesare Falco <c.falco@ubuntu.com>
+Build-Depends: debhelper (>= 8),
+	libasound2-dev,
+	libexpat1-dev,
+	libfreetype6-dev,
+	libncurses5-dev,
+	libsdl2-dev,
+	libslang2-dev,
+	zlib1g-dev
+Standards-Version: 3.9.4
+Vcs-Git: https://github.com/trngaje/advancemame
+Vcs-Browser: https://github.com/trngaje/advancemame.git
+Homepage: http://mamedev.org/
+XS-Autobuild: yes
+
+Package: advancemame
+Architecture: any
+Depends: ${misc:Depends},
+ ${shlibs:Depends}
+Description: Multiple Arcade Machine Emulator (MAME)
+ MAME is a hardware emulator: it faithfully reproduces the behavior of many
+ arcade machines (it is not a simulation). This program is not a game but can
+ directly, through ROM images, run the complete system of these old arcade
+ machines. These ROMs are subject to copyright and it is in most of the cases
+ illegal to use them if you do not own the arcade machine.
+ .
+ This package provides the MAME binary and configuration files.
