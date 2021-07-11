@@ -1,0 +1,5 @@
+libsfml (2.5.1) stable; urgency=medium
+
+  * Initial release. (Closes: #XXXXXX)
+
+ -- Dongjin Kim <tobetter@gmail.com>  Sun, 11 Jul 2021 12:46:30 +0900
