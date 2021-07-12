@@ -1,0 +1,21 @@
+diff --git a/Makefile b/Makefile
+deleted file mode 100644
+index 7a6b968d..00000000
+--- a/Makefile
++++ /dev/null
+@@ -1,15 +0,0 @@
+-PREFIX := /usr
+-INSTALLDIR := $(PREFIX)/share/libretro/assets
+-
+-all:
+-	@echo "Nothing to make for retroarch-assets."
+-
+-install:
+-	mkdir -p $(DESTDIR)$(INSTALLDIR)
+-	cp -ar * $(DESTDIR)$(INSTALLDIR)
+-	rm -rf $(DESTDIR)$(INSTALLDIR)/Makefile \
+-		$(DESTDIR)$(INSTALLDIR)/configure \
+-		$(DESTDIR)$(INSTALLDIR)/src
+-
+-test-install: all
+-	DESTDIR=/tmp/build $(MAKE) install

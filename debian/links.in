@@ -1,0 +1,7 @@
+/usr/share/fonts/truetype/mplus/mplus-1p-regular.ttf			usr/share/libretro/assets/glui/font.ttf
+/usr/share/fonts/truetype/mplus/mplus-1p-regular.ttf			usr/share/libretro/assets/xmb/monochrome/font.ttf
+/usr/share/fonts/truetype/roboto/unhinted/RobotoTTF/Roboto-Regular.ttf	usr/share/libretro/assets/xmb/flatui/font.ttf
+/usr/share/fonts/truetype/roboto/unhinted/RobotoTTF/Roboto-Regular.ttf	usr/share/libretro/assets/xmb/neoactive/font.ttf
+/usr/share/fonts/truetype/roboto/unhinted/RobotoTTF/Roboto-Regular.ttf	usr/share/libretro/assets/xmb/retroactive/font.ttf
+/usr/share/fonts/truetype/roboto/unhinted/RobotoTTF/Roboto-Regular.ttf	usr/share/libretro/assets/xmb/systematic/font.ttf
+/usr/share/fonts/truetype/roboto/unhinted/Roboto-Regular.ttf		usr/share/libretro/assets/zarch/Roboto-Condensed.ttf
