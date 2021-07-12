@@ -1,0 +1,93 @@
+Source: dolphin-emu-master
+Section: games
+Priority: optional
+Maintainer: Glenn Rice <glennricster@gmail.com>
+Uploaders: Sérgio Benjamim <sergio_br2@yahoo.com.br>
+Build-Depends:	debhelper (>= 9),
+				cmake,
+				dpkg-dev (>= 1.17.17),
+				pkg-config,
+				lsb-release,
+				libao-dev,
+				libasound2-dev,
+				libavcodec-dev,
+				libavformat-dev,
+				libbluetooth-dev,
+				libcurl4-openssl-dev,
+				libegl1-mesa-dev,
+				libenet-dev (>= 1.3.12),
+				libevdev-dev,
+				liblzo2-dev (>= 2.04),
+				libminiupnpc-dev (>= 1.8),
+				libopenal-dev,
+				libpolarssl-dev (>= 1.3.8) | libmbedtls-dev,
+				libpulse-dev,
+				libreadline-dev,
+				libsdl2-dev,
+				libsfml-dev (>= 2.1),
+				libsoil-dev,
+				libswscale-dev,
+				libudev-dev,
+				libusb-1.0-0-dev (>= 1.0.19),
+				libxext-dev,
+				libxrandr-dev,
+				portaudio19-dev,
+				qtbase5-private-dev,
+				zlib1g-dev (>= 1.2.8)
+Standards-Version: 3.9.8
+Homepage: http://dolphin-emu.org/
+
+Package: dolphin-emu-master
+Architecture: amd64 arm64
+Depends: ${shlibs:Depends}, ${misc:Depends}, dolphin-emu-data-master (= ${source:Version})
+Conflicts: dolphin-emu, dolphin-emu-trunk
+Replaces: dolphin-emu, dolphin-emu-trunk
+Description: GameCube and Wii emulator
+ Dolphin is a GameCube and Wii emulator.
+ .
+ Game compatibility is very good: a lot of GameCube and Wii titles work, but
+ the emulator might require a lot of processing power in order to run some
+ games at full speed.
+ .
+ GameCube and Wii are registered trademarks of Nintendo of America Inc. Dolphin
+ is not affiliated with or endorsed by the company mentioned.
+
+Package: dolphin-emu-master-dbg
+Section: debug
+Priority: extra
+Architecture: amd64 arm64
+Depends: dolphin-emu-master (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Conflicts: dolphin-emu-dbg, dolphin-emu-trunk-dbg
+Replaces: dolphin-emu-dbg, dolphin-emu-trunk-dbg
+Description: GameCube and Wii emulator - debug symbols
+ Dolphin is a GameCube and Wii emulator.
+ .
+ Game compatibility is very good: a lot of GameCube and Wii titles work, but
+ the emulator might require a lot of processing power in order to run some
+ games at full speed.
+ .
+ GameCube and Wii are registered trademarks of Nintendo of America Inc. Dolphin
+ is not affiliated with or endorsed by the company mentioned.
+ .
+ This package provides the debug symbols for dolphin-emu-master.
+
+Package: dolphin-emu-data-master
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Replaces: dolphin-emu-master (<< 5.0+git-r201701262047)
+Breaks: dolphin-emu-master (<< 5.0+git-r201701262047)
+Conflicts: dolphin-emu-data
+Suggests: dolphin-emu-master
+Description: Gamecube and Wii emulator - data files
+ Dolphin is a GameCube, Wii and Triforce (the arcade machine based on the
+ GameCube) emulator.
+ .
+ Game compatibility is very good: a lot of GameCube and Wii titles work, but
+ the emulator might require a lot of processing power in order to run some
+ games at full speed.
+ .
+ GameCube and Wii are registered trademarks of Nintendo of America Inc. Dolphin
+ is not affiliated with or endorsed by the company mentioned.
+ .
+ This package provides the platform independent data files for Dolphin.
