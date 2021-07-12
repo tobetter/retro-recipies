@@ -1,0 +1,5 @@
+box64 (1.0) stable; urgency=medium
+
+  * Initial release. (Closes: #XXXXXX)
+
+ -- Dongjin Kim <tobetter@gmail.com>  Mon, 12 Jul 2021 01:30:53 +0900
