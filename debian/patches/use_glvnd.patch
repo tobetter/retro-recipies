@@ -1,0 +1,13 @@
+--- a/CMakeLists.txt	2020-07-02 19:39:52.000000000 +0800
++++ b/CMakeLists.txt	2020-07-06 22:59:14.591509027 +0800
+@@ -8,6 +8,10 @@
+ 	set(CMAKE_CXX_STANDARD_REQUIRED ON)
+ endif()
+ 
++if(POLICY CMP0072)
++  cmake_policy(SET CMP0072 NEW)
++endif()
++
+ enable_language(ASM)
+ 
+ add_definitions(-D__STDC_CONSTANT_MACROS)

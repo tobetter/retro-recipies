@@ -1,0 +1,2 @@
+#!/bin/sh
+echo "usr/share/ppsspp/assets/icon_regular_72.png usr/share/icons/hicolor/72x72/apps/ppsspp.png"

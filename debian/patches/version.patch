@@ -1,0 +1,9 @@
+diff -uN ppsspp-master/git-version.cpp ppsspp-master.1/git-version.cpp
+--- a/git-version.cpp	1970-01-01 08:00:00.000000000 +0800
++++ b/git-version.cpp	2020-07-13 19:51:00.000000000 +0800
+@@ -0,0 +1,4 @@
++const char *PPSSPP_GIT_VERSION = "v1.11";
++
++// If you don't want this file to update/recompile, change to 1.
++#define PPSSPP_GIT_VERSION_NO_UPDATE 1
+

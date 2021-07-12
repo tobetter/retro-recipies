@@ -1,0 +1,57 @@
+#!/usr/bin/make -f
+
+export DEB_LDFLAGS_MAINT_APPEND=-Wl,--as-needed
+
+export QT_SELECT := qt5
+
+ARCH=$(shell dpkg-architecture -qDEB_HOST_ARCH)
+
+ifneq (,$(filter $(ARCH), armhf))
+	GLES_ENABLE=-DUSING_GLES2=ON -DUSING_EGL=ON
+	# See issue #7817
+	export CC=clang
+	export CXX=clang++
+else ifneq (,$(filter $(ARCH), arm64))
+	GLES_ENABLE=-DUSING_GLES2=ON -DUSING_EGL=ON
+endif
+
+COMMON_FLAGS=-DUSE_FFMPEG=ON -DUSE_SYSTEM_SNAPPY=ON -DUSE_SYSTEM_LIBZIP=ON -DUSE_SYSTEM_FFMPEG=OFF -DUSE_DISCORD=ON -DUSE_WAYLAND_WSI=ON
+
+%:
+	dh $@ --buildsystem=cmake --parallel
+
+override_dh_auto_configure:
+ifneq (,$(filter $(ARCH), i386))
+	cd ffmpeg && ./linux_x86.sh
+else ifneq (,$(filter $(ARCH), amd64))
+	cd ffmpeg && ./linux_x86-64.sh
+else ifneq (,$(filter $(ARCH), armhf))
+	cd ffmpeg && ./linux_armhf.sh
+else ifneq (,$(filter $(ARCH), arm64))
+	cd ffmpeg && ./linux_arm64.sh
+endif
+	dh_auto_configure --builddirectory=obj_qt -- $(GLES_ENABLE) $(COMMON_FLAGS) -DUSING_QT_UI=ON
+	dh_auto_configure --builddirectory=obj_sdl -- $(GLES_ENABLE) $(COMMON_FLAGS)
+
+override_dh_auto_build:
+	dh_auto_build --builddirectory=obj_qt
+	dh_auto_build --builddirectory=obj_sdl
+
+override_dh_auto_install:
+	dh_auto_install --builddirectory=obj_qt
+	dh_auto_install --builddirectory=obj_sdl
+
+override_dh_auto_test:
+	dh_auto_test --builddirectory=obj_qt
+	dh_auto_test --builddirectory=obj_sdl
+
+override_dh_missing:
+	dh_missing --list-missing
+
+override_dh_auto_clean:
+	dh_auto_clean --builddirectory=obj_qt
+	dh_auto_clean --builddirectory=obj_sdl
+
+#override_dh_strip:
+#	dh_strip -pppsspp --dbg-package=ppsspp-dbg
+#	dh_strip -pppsspp-sdl --dbg-package=ppsspp-sdl-dbg

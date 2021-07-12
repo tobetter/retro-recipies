@@ -1,0 +1,16 @@
+obj_qt/assets/7z.png                usr/share/ppsspp/assets
+obj_qt/assets/compat.ini            usr/share/ppsspp/assets
+obj_qt/assets/gamecontrollerdb.txt  usr/share/ppsspp/assets
+obj_qt/assets/icon_regular_72.png   usr/share/ppsspp/assets
+obj_qt/assets/langregion.ini        usr/share/ppsspp/assets
+obj_qt/assets/logo.png              usr/share/ppsspp/assets
+obj_qt/assets/ppge_atlas.meta       usr/share/ppsspp/assets
+obj_qt/assets/ppge_atlas.zim        usr/share/ppsspp/assets
+obj_qt/assets/rargray.png           usr/share/ppsspp/assets
+obj_qt/assets/ui_atlas.meta         usr/share/ppsspp/assets
+obj_qt/assets/ui_atlas.zim          usr/share/ppsspp/assets
+obj_qt/assets/unknown.png           usr/share/ppsspp/assets
+obj_qt/assets/zip.png               usr/share/ppsspp/assets
+obj_qt/assets/lang/*                usr/share/ppsspp/assets/lang
+obj_qt/assets/shaders/*             usr/share/ppsspp/assets/shaders
+obj_qt/assets/flash0/*              usr/share/ppsspp/assets/flash0
