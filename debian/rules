@@ -15,7 +15,7 @@ else ifneq (,$(filter $(ARCH), arm64))
 	GLES_ENABLE=-DUSING_GLES2=ON -DUSING_EGL=ON
 endif
 
-COMMON_FLAGS=-DUSE_FFMPEG=ON -DUSE_SYSTEM_SNAPPY=ON -DUSE_SYSTEM_LIBZIP=ON -DUSE_SYSTEM_FFMPEG=OFF -DUSE_DISCORD=ON -DUSE_WAYLAND_WSI=ON
+COMMON_FLAGS=-DUSE_FFMPEG=ON -DUSE_SYSTEM_SNAPPY=ON -DUSE_SYSTEM_LIBZIP=ON -DUSE_SYSTEM_FFMPEG=OFF -DUSE_DISCORD=ON -DUSE_WAYLAND_WSI=ON -DUNITTEST=OFF
 
 %:
 	dh $@ --buildsystem=cmake --parallel
@@ -42,8 +42,6 @@ override_dh_auto_install:
 	dh_auto_install --builddirectory=obj_sdl
 
 override_dh_auto_test:
-	dh_auto_test --builddirectory=obj_qt
-	dh_auto_test --builddirectory=obj_sdl
 
 override_dh_missing:
 	dh_missing --list-missing
