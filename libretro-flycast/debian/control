@@ -1,0 +1,17 @@
+Source: libretro-flycast
+Section: games
+Priority: optional
+Maintainer: Dongjin Kim <tobetter@gmail.com>
+Build-Depends: debhelper (>=9),
+	mesa-common-dev,
+	libgles2-mesa-dev,
+	zlib1g-dev
+Standards-Version: 3.9.8
+Vcs-Git: https://github.com/libretro/flycast.git
+
+Package: libretro-flycast
+Architecture: arm64
+Multi-Arch: same
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Flycast is a multi-platform Sega Dreamcast emulator.
+ .

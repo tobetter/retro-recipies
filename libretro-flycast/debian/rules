@@ -1,0 +1,12 @@
+#!/usr/bin/make -f
+
+PLATFORM=odroid-n2
+
+%:
+	dh $@ --parallel
+
+override_dh_auto_build:
+	make ARCH=arm \
+		HAVE_OPENMP=0 \
+		SET_OPTIM=-O2 \
+		platform=${PLATFORM}
