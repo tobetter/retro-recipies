@@ -20,7 +20,8 @@ Build-Depends: debhelper (>= 9),
  libogg-dev,
  libopenal-dev,
  libudev-dev,
- libvorbis-dev
+ libvorbis-dev,
+ libxrandr-dev
 Standards-Version: 3.9.5
 Homepage: http://www.sfml-dev.org/
 
@@ -31,11 +32,12 @@ Multi-Arch: same
 Depends: ${misc:Depends},
  libgl1-mesa-dev | libgl-dev,
  libglu1-mesa-dev | libglu-dev,
- libsfml-audio2 (= ${binary:Version}),
- libsfml-graphics2 (= ${binary:Version}),
- libsfml-network2 (= ${binary:Version}),
- libsfml-system2 (= ${binary:Version}),
- libsfml-window2 (= ${binary:Version})
+ libsfml-audio2.5 (= ${binary:Version}),
+ libsfml-graphics2.5 (= ${binary:Version}),
+ libsfml-network2.5 (= ${binary:Version}),
+ libsfml-system2.5 (= ${binary:Version}),
+ libsfml-window2.5 (= ${binary:Version}),
+ libxrandr-dev
 Suggests: libsfml2-dbg, libsfml-doc
 Description: Simple and Fast Multimedia Library - Development Files
  SFML is a modern multimedia library offering a wide range of subsystems
@@ -45,7 +47,7 @@ Description: Simple and Fast Multimedia Library - Development Files
  .
  This package includes header files for all SFML libraries.
 
-Package: libsfml-audio2
+Package: libsfml-audio2.5
 Architecture: any
 Multi-Arch: same
 Pre-Depends: ${misc:Pre-Depends}
@@ -59,7 +61,7 @@ Description: Simple and Fast Multimedia Library - Audio part
  The Audio library is used to play sound and music in games. It is able to
  load OGG/Vorbis files.
 
-Package: libsfml-graphics2
+Package: libsfml-graphics2.5
 Architecture: any
 Multi-Arch: same
 Pre-Depends: ${misc:Pre-Depends}
@@ -73,7 +75,7 @@ Description: Simple and Fast Multimedia Library - Graphics part
  The Graphics library contains all the OpenGL and drawing code. It needs the
  Window library for Window creation.
 
-Package: libsfml-network2
+Package: libsfml-network2.5
 Architecture: any
 Multi-Arch: same
 Pre-Depends: ${misc:Pre-Depends}
@@ -86,7 +88,7 @@ Description: Simple and Fast Multimedia Library - Network part
  .
  The Network Library brings basic networking support as needed by games.
 
-Package: libsfml-system2
+Package: libsfml-system2.5
 Architecture: any
 Multi-Arch: same
 Pre-Depends: ${misc:Pre-Depends}
@@ -100,7 +102,7 @@ Description: Simple and Fast Multimedia Library - System part
  The system library brings useful system utilities like multithreading and
  UNICODE handling.
 
-Package: libsfml-window2
+Package: libsfml-window2.5
 Architecture: any
 Multi-Arch: same
 Pre-Depends: ${misc:Pre-Depends}
@@ -118,11 +120,11 @@ Section: debug
 Architecture: any
 Multi-Arch: same
 Depends: ${misc:Depends},
- libsfml-audio2 (= ${binary:Version}) |
- libsfml-graphics2 (= ${binary:Version}) |
- libsfml-network2 (= ${binary:Version}) |
- libsfml-system2 (= ${binary:Version}) |
- libsfml-window2 (= ${binary:Version})
+ libsfml-audio2.5 (= ${binary:Version}) |
+ libsfml-graphics2.5 (= ${binary:Version}) |
+ libsfml-network2.5 (= ${binary:Version}) |
+ libsfml-system2.5 (= ${binary:Version}) |
+ libsfml-window2.5 (= ${binary:Version})
 Description: Simple and Fast Multimedia Library - Debug Symbols
  SFML is a modern multimedia library offering a wide range of subsystems
  useful to produce a multimedia app. It offers OpenGL integration for

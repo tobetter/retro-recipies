@@ -10,8 +10,8 @@ DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
 override_dh_auto_configure:
 	dh_auto_configure -- \
 		-DLIB_SUFFIX=/$(DEB_HOST_MULTIARCH) \
-		-DSFML_BUILD_DOC=ON \
-		-DSFML_DRM=1
+		-DSFML_BUILD_DOC=OFF \
+		-DSFML_OS_LINUX=1
 
 override_dh_strip:
 	dh_strip --dbg-package=libsfml2-dbg
