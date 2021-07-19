@@ -1,0 +1,22 @@
+Source: libretro-np2kai
+Section: games
+Priority: optional
+Maintainer: Debian Games Team <pkg-games-devel@lists.alioth.debian.org>
+Uploaders: Dongjin Kim <tobetter@gmail.com>
+Build-Depends: debhelper (>= 9),
+	libsdl1.2-dev,
+	libpthread-stubs0-dev,
+	libusb-1.0-0-dev
+Standards-Version: 3.9.8
+Vcs-Git: https://github.com/libretro/NP2kai.git
+
+Package: libretro-np2kai
+Architecture: any
+Multi-Arch: same
+Depends: retroarch | libretro-frontend, ${misc:Depends}, ${shlibs:Depends}
+Description: Libretro wrapper for the Neko Project II kai
+ This wrapper makes Neko Project II kai core API compatible with libretro, thus
+ allowing its use with libretro frontends, such as RetroArch.
+ .
+ Neko Project II kai is a NEC PC-98 computer emulator and a fork of Neko
+ Project II.
