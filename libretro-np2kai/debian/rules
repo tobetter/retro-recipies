@@ -1,0 +1,17 @@
+#!/usr/bin/make -f
+
+# Fix hardening-no-bindnow
+export DEB_BUILD_MAINT_OPTIONS = hardening=+bindnow
+
+GIT_HASH := $(shell dpkg-parsechangelog | sed -rne 's,^Version: (.*),\1, p' | sed s/-/\\n\ /g | tail -n 2 | head -n 1)
+
+%:
+	dh $@ --parallel
+
+override_dh_auto_configure:
+
+override_dh_auto_build:
+	$(MAKE) -C sdl GIT_VERSION="'$(GIT_HASH)'"
+
+override_dh_auto_clean:
+	$(MAKE) -C sdl clean
