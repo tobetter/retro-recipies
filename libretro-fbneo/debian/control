@@ -1,0 +1,42 @@
+Source: libretro-fbneo
+Section: games
+Priority: optional
+Maintainer: Debian Games Team <pkg-games-devel@lists.alioth.debian.org>
+Uploaders: Paul Preuss <paul@dokomi.de>
+Build-Depends: debhelper (>= 9), zlib1g-dev
+Standards-Version: 3.9.8
+Vcs-Git: https://github.com/libretro/FBNeo.git
+Homepage: https://neo-source.com
+
+Package: libretro-fbneo
+Architecture: any
+Multi-Arch: same
+Depends: retroarch | libretro-frontend, ${misc:Depends}, ${shlibs:Depends}
+Replaces: libretro-fba (<< 0.2.97.39-r201701270103-c4c9fb5-20~)
+Breaks: libretro-fba (<< 0.2.97.39-r201701270103-c4c9fb5-20~)
+Description: Libretro wrapper for FinalBurn Neo
+ This wrapper makes FinalBurn Neo API compatible with libretro, thus allowing its use
+ with libretro frontends, such as RetroArch.
+ .
+ FinalBurn Neo is an arcade emulator supporting the following platforms:
+ .
+  * Capcom CPS-1
+  * Capcom CPS-2
+  * Capcom CPS-3
+  * Cave
+  * Data East DEC-0, DEC-8 and DECO IC16 based games
+  * Galaxian based hardware
+  * Irem M62, M63, M72, M90, M92 and M107 hardware
+  * Kaneko 16
+  * Konami
+  * Neo-Geo
+  * NMK16
+  * Pacman based hardware
+  * PGM
+  * Psikyo 68EC020 and SH-2 based hardware
+  * Sega System 1, System 16 (and similar), System 18, X-Board and Y-Board
+  * Super Kaneko Nova System
+  * Toaplan 1
+  * Toaplan 2
+  * Taito F2, X, Z and others
+  * Miscellaneous drivers for lots of other hardware
