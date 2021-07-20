@@ -1,0 +1,26 @@
+diff --git a/Makefile b/Makefile
+index 65ece36..26431b4 100644
+--- a/Makefile
++++ b/Makefile
+@@ -459,6 +459,21 @@ else ifneq (,$(findstring rpi,$(platform)))
+    else ifneq (,$(findstring rpi3, $(platform)))
+ 	CCOMFLAGS += -marm -mcpu=cortex-a53 -mfpu=neon-fp-armv8 -mfloat-abi=hard
+    endif
++else ifneq (,$(findstring odroid-n2,$(platform)))
++   CC = g++
++   CC_AS = gcc
++   AR = @ar
++   NATIVELD = g++
++   LD = g++
++   TARGETLIB := $(TARGET_NAME)_libretro.so
++   SHARED := -shared -Wl,--no-undefined
++   fpic = -fPIC
++   LDFLAGS += $(SHARED)
++   LIBS += -lstdc++ -lpthread
++   CCOMFLAGS += -fomit-frame-pointer -ffast-math -fsigned-char
++   ARM_ENABLED = 1
++   PTR64 = 1
++   CCOMFLAGS += -mcpu=cortex-a53
+ 
+ # ARM
+ else ifneq (,$(findstring armv,$(platform)))
