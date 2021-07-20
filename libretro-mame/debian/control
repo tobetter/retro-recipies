@@ -1,0 +1,19 @@
+Source: libretro-mame
+Section: games
+Priority: optional
+Maintainer: Dongjin Kim <tobetter@gmail.com>
+Uploaders: Dongjin Kim <tobetter@gmail.com>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.5.0
+Vcs-Git: https://github.com/libretro/mame2010-libretro.git
+XS-Autobuild: yes
+Rules-Requires-Root: no
+
+Package: libretro-mame
+Architecture: any
+Depends: ${misc:Depends},
+	${shlibs:Depends}
+Suggests: gnome-video-arcade,
+Description: Multiple Arcade Machine Emulator (MAME2010)
+ Port of MAME 0.139 for libretro, originally sourced from
+ https://github.com/mamedev/mame/releases/download/mame0139/mame0139s.zip
