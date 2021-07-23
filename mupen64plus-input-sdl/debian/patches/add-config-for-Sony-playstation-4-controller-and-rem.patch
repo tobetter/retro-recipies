@@ -1,0 +1,54 @@
+From: amietn <amietn@foobar>
+Date: Thu, 7 May 2015 15:22:51 +0200
+Subject: add config for Sony playstation 4 controller and remove conflicting
+ PS3 controller name
+
+Origin: upstream, https://github.com/mupen64plus/mupen64plus-input-sdl/commit/bb0ffc3f82174f371327b85750d93cd8b86f2518
+---
+ data/InputAutoCfg.ini | 26 +++++++++++++++++++++++++-
+ 1 file changed, 25 insertions(+), 1 deletion(-)
+
+diff --git a/data/InputAutoCfg.ini b/data/InputAutoCfg.ini
+index 555490d..eb18c36 100644
+--- a/data/InputAutoCfg.ini
++++ b/data/InputAutoCfg.ini
+@@ -871,7 +871,6 @@ Y Axis = axis(1-,1+)
+ 
+ [PLAYSTATION(R)3 Controller]
+ [Sony PLAYSTATION(R)3 Controller]
+-[Sony Computer Entertainment Wireless Controller]
+ [SHENGHIC 2009/0708ZXW-V1Inc. PLAYSTATION(R)3Conteroller]
+ plugged = True
+ plugin = 2
+@@ -897,6 +896,31 @@ Rumblepak switch =
+ X Axis = axis(0-,0+)
+ Y Axis = axis(1-,1+)
+ 
++[Sony Computer Entertainment Wireless Controller]
++plugged = True
++plugin = 2
++mouse = False
++AnalogDeadzone = 4096,4096
++AnalogPeak = 32768,32768
++DPad R = hat(0 Right)
++DPad L = hat(0 Left)
++DPad D = hat(0 Down)
++DPad U = hat(0 Up)
++Start = button(9)
++Z Trig = axis(3+)
++B Button = button(0)
++A Button = button(1)
++C Button R = axis(2+)
++C Button L = axis(2-)
++C Button D = axis(5+)
++C Button U = axis(5-)
++R Trig = button(5)
++L Trig = button(4)
++Mempak switch =
++Rumblepak switch =
++X Axis = axis(0-,0+)
++Y Axis = axis(1-,1+)
++
+ [SAITEK P880]
+ plugged = True
+ plugin = 2

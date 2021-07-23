@@ -1,0 +1,47 @@
+From: Eric Duhamel <ericxdu23@gmail.com>
+Date: Wed, 21 Oct 2015 20:32:35 -0700
+Subject: Updated "Generic X-Box pad" to conform to the README
+
+The [Generic X-Box pad] section was misconfigured so I updated it
+to conform to the README. R-button, L-button, Z-trigger, B-button,
+and START are now properly mapped. I tested this config by playing
+Ocarina Of Time and the controller layout works well.
+
+Origin: upstream, https://github.com/mupen64plus/mupen64plus-input-sdl/commit/77229317d0cb50b28e10486465cb71d3837d4220
+---
+ data/InputAutoCfg.ini | 19 +++++++++----------
+ 1 file changed, 9 insertions(+), 10 deletions(-)
+
+diff --git a/data/InputAutoCfg.ini b/data/InputAutoCfg.ini
+index e3ee62a..8e00ded 100644
+--- a/data/InputAutoCfg.ini
++++ b/data/InputAutoCfg.ini
+@@ -1487,19 +1487,18 @@ DPad R = hat(0 Right)
+ DPad L = hat(0 Left)
+ DPad D = hat(0 Down)
+ DPad U = hat(0 Up)
+-Start = button(6)
+-Z Trig = button(7)
+-B Button = button(1)
++Start = button(7)
++Z Trig = axis(2+)
++B Button = button(2)
+ A Button = button(0)
+ C Button R = axis(3+)
+-C Button L = axis(3-)
+-C Button D = axis(4+)
++C Button L = axis(3-) button(3)
++C Button D = axis(4+) button(1)
+ C Button U = axis(4-)
+-R Trig = axis(5+)
+-L Trig = axis(2+)
+-Mempak switch = button(5)
+-Rumblepak switch = button(2)
+-X Axis = axis(0-,0+)
++R Trig = button(5) axis(5+)
++L Trig = button(4)
++Mempak switch = button(9)
++Rumblepak switch = button(10)X Axis = axis(0-,0+)
+ Y Axis = axis(1-,1+)
+ 
+ [OSX: USB GamePad]

@@ -1,0 +1,45 @@
+From: Richard Goedeken <Richard@fascinationsoftware.com>
+Date: Sat, 6 Jun 2015 09:55:53 -0700
+Subject: add auto-config for Xiaomi Bluetooth Controller from Peter Goelst on
+ google group mailing list
+
+Origin: upstream, https://github.com/mupen64plus/mupen64plus-input-sdl/commit/10f69275e837aac3c980e1dfc81500ee15a6bf52
+---
+ data/InputAutoCfg.ini | 27 +++++++++++++++++++++++++++
+ 1 file changed, 27 insertions(+)
+
+diff --git a/data/InputAutoCfg.ini b/data/InputAutoCfg.ini
+index 0e995c4..5097020 100644
+--- a/data/InputAutoCfg.ini
++++ b/data/InputAutoCfg.ini
+@@ -1628,3 +1628,30 @@ Mempak switch = key(44)
+ Rumblepak switch = key(46)
+ X Axis = key(276,275)
+ Y Axis = key(273,274)
++
++; Xiaomi Bluetooth Controller
++[小米蓝牙手柄]
++plugged = True
++plugin = 2
++mouse = False
++AnalogDeadzone = 0,0
++AnalogPeak = 32768,32768
++DPad R = axis(8+)
++DPad L = axis(8-)
++DPad D = axis(9+)
++DPad U = axis(9-)
++Start = button(11)
++Z Trig = button(6)
++B Button = button(3)
++A Button = button(0)
++C Button R = axis(2+)
++C Button L = axis(2-)
++C Button D = axis(5+)
++C Button U = axis(5-)
++R Trig = button(7)
++L Trig = button(8)
++Mempak switch =
++Rumblepak switch =
++X Axis = axis(0-,0+)
++Y Axis = axis(1-,1+)
++

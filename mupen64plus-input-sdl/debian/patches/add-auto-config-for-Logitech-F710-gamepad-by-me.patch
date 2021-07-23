@@ -1,0 +1,45 @@
+From: Richard Goedeken <Richard@fascinationsoftware.com>
+Date: Sat, 6 Jun 2015 21:59:46 -0700
+Subject: add auto-config for Logitech F710 gamepad by me
+
+Origin: upstream, https://github.com/mupen64plus/mupen64plus-input-sdl/commit/b7cd6074830ee6be65a50c5371b89d6b03f8d168
+---
+ data/InputAutoCfg.ini | 25 +++++++++++++++++++++++++
+ 1 file changed, 25 insertions(+)
+
+diff --git a/data/InputAutoCfg.ini b/data/InputAutoCfg.ini
+index 5097020..f128e3b 100644
+--- a/data/InputAutoCfg.ini
++++ b/data/InputAutoCfg.ini
+@@ -529,6 +529,31 @@ Rumblepak switch = button(7)
+ X Axis = axis(0-,0+)
+ Y Axis = axis(1-,1+)
+ 
++[Logitech Gamepad F710]
++plugged = True
++plugin = 2
++mouse = False
++AnalogDeadzone = 4096,4096
++AnalogPeak = 32768,32768
++DPad R = hat(0 Right)
++DPad L = hat(0 Left)
++DPad D = hat(0 Down)
++DPad U = hat(0 Up)
++Start = button(7)
++Z Trig = axis(2+)
++B Button = button(0)
++A Button = button(1)
++C Button R = axis(3+)
++C Button L = axis(3-)
++C Button D = axis(4+)
++C Button U = axis(4-)
++R Trig = button(5)
++L Trig = button(4)
++Mempak switch = button(6)
++Rumblepak switch = axis(5+)
++X Axis = axis(0-,0+)
++Y Axis = axis(1-,1+)
++
+ [Logitech Logitech(R) Precision(TM) Gamepad]
+ [Gravis GamePad Pro USB]
+ plugged = True

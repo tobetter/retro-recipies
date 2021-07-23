@@ -1,0 +1,26 @@
+From: Richard Goedeken <Richard@fascinationsoftware.com>
+Date: Sun, 18 Oct 2015 20:32:35 -0700
+Subject: fixes for Gasia PS Gamepad from Marcus Dean Adams on google group
+ email list
+
+Origin: upstream, https://github.com/mupen64plus/mupen64plus-input-sdl/commit/493b3a6b10d66e86375ef9a1c860593cdc3b8abf
+---
+ data/InputAutoCfg.ini | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/data/InputAutoCfg.ini b/data/InputAutoCfg.ini
+index 7496f62..ea90a69 100644
+--- a/data/InputAutoCfg.ini
++++ b/data/InputAutoCfg.ini
+@@ -208,9 +208,9 @@ mouse = False
+ AnalogDeadzone = 4096,4096
+ AnalogPeak = 32768,32768
+ DPad R = key(275) axis(0+) hat(0 Right)
+-DPad L = key(276) axis(0-)
++DPad L = key(276) axis(0-) hat(0 Left)
+ DPad D = key(274) axis(1+) hat(0 Down)
+-DPad U = key(273) axis(1-)
++DPad U = key(273) axis(1-) hat(0 Up)
+ Start = button(9)
+ Z Trig = button(6)
+ B Button = button(3)

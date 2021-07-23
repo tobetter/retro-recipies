@@ -1,0 +1,22 @@
+From: Sven Eckelmann <sven@narfation.org>
+Date: Sat, 31 Aug 2013 13:28:04 +0200
+Subject: Add workaround for missing rumble with xboxdrv
+
+Bug: https://github.com/xboxdrv/xboxdrv/issues/47
+---
+ src/plugin.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/plugin.c b/src/plugin.c
+index 2e2cd95..44a531e 100644
+--- a/src/plugin.c
++++ b/src/plugin.c
+@@ -404,7 +404,7 @@ EXPORT void CALL ControllerCommand(int Control, unsigned char *Command)
+ #if SDL_VERSION_ATLEAST(2,0,0)
+                 if(dwAddress == PAK_IO_RUMBLE && controller[Control].event_joystick) {
+                     if (*Data) {
+-                        SDL_HapticRumblePlay(controller[Control].event_joystick, 1, SDL_HAPTIC_INFINITY);
++                        SDL_HapticRumblePlay(controller[Control].event_joystick, 1, 0x7fff);
+                     } else {
+                         SDL_HapticRumbleStop(controller[Control].event_joystick);
+                     }

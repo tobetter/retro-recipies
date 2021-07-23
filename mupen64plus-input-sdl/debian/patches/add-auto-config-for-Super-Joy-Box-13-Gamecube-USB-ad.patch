@@ -1,0 +1,47 @@
+From: Richard Goedeken <Richard@fascinationsoftware.com>
+Date: Sat, 6 Jun 2015 08:53:24 -0700
+Subject: add auto-config for Super Joy Box 13 Gamecube USB adapter from Nick
+ Griffiths on google group mailing list
+
+Origin: upstream, https://github.com/mupen64plus/mupen64plus-input-sdl/commit/d0d385defa0e6eb581d3ac7999c568201a246f58
+---
+ data/InputAutoCfg.ini | 26 ++++++++++++++++++++++++++
+ 1 file changed, 26 insertions(+)
+
+diff --git a/data/InputAutoCfg.ini b/data/InputAutoCfg.ini
+index 96df61b..0e995c4 100644
+--- a/data/InputAutoCfg.ini
++++ b/data/InputAutoCfg.ini
+@@ -175,6 +175,32 @@ Rumblepak switch =
+ X Axis = axis(0-,0+)
+ Y Axis = axis(1-,1+)
+ 
++; "Super Joy Box 13" USB adaptor for a Gamecube controller
++[GameCube to USB box 1]
++plugged = True
++plugin = 2
++mouse = False
++AnalogDeadzone = 4096,4096
++AnalogPeak = 32768,32768
++DPad R = hat(0 Right)
++DPad L = hat(0 Left)
++DPad D = hat(0 Down)
++DPad U = hat(0 Up)
++Start = button(7)
++Z Trig = button(6)
++B Button = button(1)
++A Button = button(0)
++C Button R = axis(2+)
++C Button L = axis(2-)
++C Button D = axis(3-)
++C Button U = axis(3+)
++R Trig = axis(5+)
++L Trig = axis(4+)
++Mempak switch =
++Rumblepak switch =
++X Axis = axis(0-,0+)
++Y Axis = axis(1-,1+)
++
+ [Gasia Co.,Ltd PS(R) Gamepad]
+ plugged = True
+ plugin = 2

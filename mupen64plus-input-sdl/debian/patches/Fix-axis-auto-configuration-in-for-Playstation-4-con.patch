@@ -1,0 +1,21 @@
+From: Sven Eckelmann <sven@narfation.org>
+Date: Fri, 1 May 2015 16:56:19 +0200
+Subject: Fix axis auto configuration for Playstation 4 controllers
+
+---
+ data/InputAutoCfg.ini | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/data/InputAutoCfg.ini b/data/InputAutoCfg.ini
+index eb18c36..155c27a 100644
+--- a/data/InputAutoCfg.ini
++++ b/data/InputAutoCfg.ini
+@@ -907,7 +907,7 @@ DPad L = hat(0 Left)
+ DPad D = hat(0 Down)
+ DPad U = hat(0 Up)
+ Start = button(9)
+-Z Trig = axis(3+)
++Z Trig = axis(3+) button(6)
+ B Button = button(0)
+ A Button = button(1)
+ C Button R = axis(2+)

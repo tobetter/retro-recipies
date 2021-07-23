@@ -1,0 +1,30 @@
+From: Eric Duhamel <ericxdu23@gmail.com>
+Date: Wed, 21 Oct 2015 20:32:35 -0700
+Subject: Fixed "Xbox 360 Wireless Receiver" section
+
+Axes 3 and 4 were swapped
+
+Origin: upstream, https://github.com/mupen64plus/mupen64plus-input-sdl/commit/78d3a430657a64fcebda4edb47ba9fbc2c7eb75b
+---
+ data/InputAutoCfg.ini | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/data/InputAutoCfg.ini b/data/InputAutoCfg.ini
+index 6a191c2..4759f1a 100644
+--- a/data/InputAutoCfg.ini
++++ b/data/InputAutoCfg.ini
+@@ -751,10 +751,10 @@ Start = button(7)
+ Z Trig = axis(2+)
+ B Button = button(2)
+ A Button = button(0)
+-C Button R = axis(4+)
+-C Button L = axis(4-) button(3)
+-C Button D = axis(3+) button(1)
+-C Button U = axis(3-)
++C Button R = axis(3+)
++C Button L = axis(3-) button(3)
++C Button D = axis(4+) button(1)
++C Button U = axis(4-)
+ R Trig = button(5) axis(5+)
+ L Trig = button(4)
+ Mempak switch = 

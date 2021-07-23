@@ -1,0 +1,23 @@
+From: Eric Duhamel <ericxdu23@gmail.com>
+Date: Wed, 21 Oct 2015 20:32:35 -0700
+Subject: Fixed a small error in the changed section
+
+Origin: upstream, https://github.com/mupen64plus/mupen64plus-input-sdl/commit/2586367d2bb2b006ce6296898bc5f3b5db14a1a1
+---
+ data/InputAutoCfg.ini | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/data/InputAutoCfg.ini b/data/InputAutoCfg.ini
+index 8e00ded..6a191c2 100644
+--- a/data/InputAutoCfg.ini
++++ b/data/InputAutoCfg.ini
+@@ -1498,7 +1498,8 @@ C Button U = axis(4-)
+ R Trig = button(5) axis(5+)
+ L Trig = button(4)
+ Mempak switch = button(9)
+-Rumblepak switch = button(10)X Axis = axis(0-,0+)
++Rumblepak switch = button(10)
++X Axis = axis(0-,0+)
+ Y Axis = axis(1-,1+)
+ 
+ [OSX: USB GamePad]

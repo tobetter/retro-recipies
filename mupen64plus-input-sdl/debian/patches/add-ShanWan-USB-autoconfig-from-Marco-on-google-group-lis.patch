@@ -1,0 +1,46 @@
+From: Richard Goedeken <Richard@fascinationsoftware.com>
+Date: Sun, 4 Oct 2015 20:32:35 -0700
+Subject: add ShanWan USB autoconfig from Marco on google group list: A
+ Playstation Clone, Rumble Trigger Incorrect
+
+Origin: upstream, https://github.com/mupen64plus/mupen64plus-input-sdl/commit/d8e1b5b0ad8404cfbcf496cb6c7beacc30dd032b
+---
+ data/InputAutoCfg.ini | 25 +++++++++++++++++++++++++
+ 1 file changed, 25 insertions(+)
+
+diff --git a/data/InputAutoCfg.ini b/data/InputAutoCfg.ini
+index ea90a69..e3ee62a 100644
+--- a/data/InputAutoCfg.ini
++++ b/data/InputAutoCfg.ini
+@@ -1196,6 +1196,31 @@ Rumblepak switch = axis(10+)
+ X Axis = axis(0-,0+)
+ Y Axis = axis(1-,1+)
+ 
++[ShanWan USB WirelessGamepad]
++plugged = True
++plugin = 2
++mouse = False
++AnalogDeadzone = 4096,4096
++AnalogPeak = 32768,32768
++DPad R = axis(0+)
++DPad L = axis(0-)
++DPad D = axis(1+)
++DPad U = axis(1-)
++Start = button(9)
++Z Trig = button(8)
++B Button = button(3)
++A Button = button(2)
++C Button R = button(7)
++C Button L = button(6)
++C Button D = button(1)
++C Button U = button(0)
++R Trig = button(5)
++L Trig = button(4)
++Mempak switch = key(109)
++Rumblepak switch = key(114)
++Y Axis = axis(1-,1+)
++X Axis = axis(0-,0+)
++
+ [SZMY-POWER CO.,LTD. GAMEPAD 3 TURBO]
+ plugged = True
+ plugin = 2

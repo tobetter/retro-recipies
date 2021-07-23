@@ -1,0 +1,21 @@
+From: Stefan <gizmo98@users.noreply.github.com>
+Date: Wed, 7 Oct 2015 20:32:35 -0700
+Subject: Add "USB Gamepad "
+
+Origin: upstream, https://github.com/mupen64plus/mupen64plus-input-sdl/commit/dc33cef8360018782d6228836ce74d401f421059
+---
+ data/InputAutoCfg.ini | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/data/InputAutoCfg.ini b/data/InputAutoCfg.ini
+index 3111c97..7496f62 100644
+--- a/data/InputAutoCfg.ini
++++ b/data/InputAutoCfg.ini
+@@ -1704,6 +1704,7 @@ X Axis = axis(0-,0+)
+ Y Axis = axis(1-,1+)
+ 
+ [USB,2-axis 8-button gamepad]
++[USB Gamepad ]
+ plugged = True
+ plugin = 2
+ mouse = False

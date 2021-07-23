@@ -1,0 +1,44 @@
+From: Richard Goedeken <Richard@fascinationsoftware.com>
+Date: Wed, 12 Aug 2015 14:26:57 -0700
+Subject: add another huijia auto-config from alecjw on github ticket #628
+
+Origin: upstream, https://github.com/mupen64plus/mupen64plus-input-sdl/commit/24cc611bdb2d031c1ec01cf6cc49f1fe99f04c28
+---
+ data/InputAutoCfg.ini | 24 ++++++++++++++++++++++++
+ 1 file changed, 24 insertions(+)
+
+diff --git a/data/InputAutoCfg.ini b/data/InputAutoCfg.ini
+index 9b410b4..5efd57f 100644
+--- a/data/InputAutoCfg.ini
++++ b/data/InputAutoCfg.ini
+@@ -970,6 +970,30 @@ Rumblepak switch = key(114)
+ X Axis = axis(0-,0+)
+ Y Axis = axis(1-,1+)
+ 
++; this is also the MayFlash / HuiJia adapter
++[PS/SS/N64 Joypad to USB BOX]
++plugged=True
++plugin=2
++mouse=False
++AnalogDeadzone=1024,1024
++AnalogPeak=11000,11000
++DPad R=hat(0 right)
++DPad L=hat(0 left)
++DPad U=hat(0 up)
++DPad D=hat(0 down)
++Start=button(8)
++Z Trig=button(9)
++B Button=button(2)
++A Button=button(1)
++C Button R=axis(2-)
++C Button L=axis(2+)
++C Button U=axis(3-)
++C Button D=axis(3+)
++R Trig=button(7)
++L Trig=button(5)
++X Axis=axis(0-,0+)
++Y Axis=axis(1-,1+)
++
+ [Rock Candy Gamepad for PS3]
+ plugged = True
+ plugin = 2
