@@ -36,7 +36,7 @@ CMAKE_OPTIONS =                                   \
 ARCH=$(shell dpkg-architecture -qDEB_HOST_ARCH)
 
 ifeq ($(ARCH),arm64)
-	CMAKE_OPTIONS+=-DUSE_EGL=True
+	CMAKE_OPTIONS+=-DENABLE_EGL=ON
 endif
 
 CPPFLAGS+=-DNDEBUG
