@@ -1,0 +1,49 @@
+Source: mupen64plus-rsp-cxd4
+Section: games
+Priority: optional
+Maintainer: Sergio Benjamim <sergio_br2@yahoo.com.br>
+Standards-Version: 3.9.5
+Homepage: http://code.google.com/p/mupen64plus/
+Vcs-Git: https://github.com/mupen64plus/mupen64plus-rsp-cxd4.git
+Vcs-Browser: https://github.com/mupen64plus/mupen64plus-rsp-cxd4.git
+Build-Depends:
+ debhelper (>= 9.20130604),
+ dpkg-dev (>= 1.16.1.1),
+ libmupen64plus-dev (>= 1.99.5),
+
+Package: mupen64plus-rsp-cxd4
+Architecture: all
+Multi-Arch: same
+Pre-Depends:
+ ${misc:Pre-Depends},
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+ mupen64plus-rsp-abi-2,
+Provides:
+ mupen64plus-rsp,
+Description: low-level RSP interpreter emulation plugin for mupen64plus
+ This is a port of HatCat's RSP Static Interpreter for mupen64plus, which can
+ be used with a low-level RDP emulation plugin like mupen64plus-video-z64. It's
+ possible to use with a high-level RDP emulation plugin, like glide64mk2 or
+ rice, just enable DisplayListToGraphicsPlugin option.
+ .
+ Needs a CPU with SSE2 support.
+
+Package: mupen64plus-rsp-cxd4-dbg
+Section: debug
+Priority: extra
+Architecture: all
+Multi-Arch: same
+Pre-Depends:
+ ${misc:Pre-Depends},
+Depends:
+ ${misc:Depends},
+ mupen64plus-rsp-cxd4 (= ${binary:Version}),
+Description: low-level RSP interpreter emulation plugin for mupen64plus debug symbols
+ This is a port of HatCat's RSP Static Interpreter for mupen64plus, which can
+ be used with a low-level RDP emulation plugin like mupen64plus-video-z64. It's
+ possible to use with a high-level RDP emulation plugin, like glide64mk2 or
+ rice, just enable DisplayListToGraphicsPlugin option.
+ .
+ This package contains the debug files.
