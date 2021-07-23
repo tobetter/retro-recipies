@@ -1,0 +1,32 @@
+From: Sven Eckelmann <sven@narfation.org>
+Date: Sun, 10 May 2015 11:18:05 +0200
+Subject: Use pkg-config to find GLESv2 library
+
+---
+ projects/unix/Makefile | 13 ++++++++++++-
+ 1 file changed, 12 insertions(+), 1 deletion(-)
+
+diff --git a/projects/unix/Makefile b/projects/unix/Makefile
+index 7d5e848..0d33fb7 100755
+--- a/projects/unix/Makefile
++++ b/projects/unix/Makefile
+@@ -273,7 +273,18 @@ endif
+ 
+ ifeq ($(USE_GLES), 1)
+   CFLAGS += -DUSE_GLES
+-  LDLIBS += -lGLESv2
++
++  GLESV2_NAME ?= glesv2
++  ifeq ($(origin GLESV2_CFLAGS) $(origin GLESV2_LDLIBS), undefined undefined)
++    ifeq ($(shell $(PKG_CONFIG) --modversion $(GLESV2_NAME) 2>/dev/null),)
++      $(error No $(GLESV2_NAME) development libraries found!)
++    endif
++    GLESV2_CFLAGS += $(shell $(PKG_CONFIG) --cflags $(GLESV2_NAME))
++    GLESV2_LDLIBS +=  $(shell $(PKG_CONFIG) --libs $(GLESV2_NAME))
++  endif
++  CFLAGS += $(GLESV2_CFLAGS)
++  LDLIBS += $(GLESV2_LDLIBS)
++
+   # OSD uses non-ES code and breaks attribs of video plugins
+   OSD=0
+ endif

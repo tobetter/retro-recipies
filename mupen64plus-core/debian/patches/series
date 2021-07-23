@@ -1,0 +1,10 @@
+Use-font-from-ttf-bitstream-vera.patch
+Add-printf-format-attribute.patch
+Disable-the-disassembler-of-the-recompiled-code.patch
+Use-pkg-config-to-find-GLESv2-library.patch
+Remove-unused-GLESv2-library.patch
+Avoid-.text-relocations-in-PIC-shared-library.patch
+bugfix-gameshark-cheat-codes-which-modified-executab.patch
+fix-joystick-mapped-Core-events-under-SDL2.patch
+Fix-spelling-errors.patch
+Fix-multiple-definition-errors.patch

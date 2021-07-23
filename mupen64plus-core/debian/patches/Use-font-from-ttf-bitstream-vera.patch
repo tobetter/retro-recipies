@@ -1,0 +1,44 @@
+From: Sven Eckelmann <sven@narfation.org>
+Date: Tue, 2 Jul 2013 10:25:55 +0200
+Subject: Use font from ttf-bitstream-vera
+
+Forwarded: not-needed
+---
+ projects/unix/Makefile | 1 +
+ src/osd/osd.cpp        | 4 ++--
+ 2 files changed, 3 insertions(+), 2 deletions(-)
+
+diff --git a/projects/unix/Makefile b/projects/unix/Makefile
+index 56a30a3..f4f26b4 100755
+--- a/projects/unix/Makefile
++++ b/projects/unix/Makefile
+@@ -633,6 +633,7 @@ install: $(TARGET)
+ 	$(INSTALL) -m 0644 $(INSTALL_STRIP_FLAG) $(TARGET) "$(DESTDIR)$(LIBDIR)"
+ 	$(INSTALL) -d "$(DESTDIR)$(SHAREDIR)"
+ 	$(INSTALL) -m 0644 ../../data/* "$(DESTDIR)$(SHAREDIR)"
++	$(RM) "$(DESTDIR)$(SHAREDIR)"/font.ttf
+ 	$(INSTALL) -d "$(DESTDIR)$(INCDIR)"
+ 	$(INSTALL) -m 0644 ../../src/api/m64p_*.h "$(DESTDIR)$(INCDIR)"
+ 	-$(LDCONFIG) "$(DESTDIR)$(LIBDIR)"
+diff --git a/src/osd/osd.cpp b/src/osd/osd.cpp
+index 3ccf9ae..9908282 100644
+--- a/src/osd/osd.cpp
++++ b/src/osd/osd.cpp
+@@ -46,7 +46,7 @@ extern "C" {
+     #include "plugin/plugin.h"
+ }
+ 
+-#define FONT_FILENAME "font.ttf"
++#define FONT_FILENAME "/usr/share/fonts/truetype/ttf-bitstream-vera/Vera.ttf"
+ 
+ typedef void (APIENTRYP PTRGLACTIVETEXTURE)(GLenum texture);
+ static PTRGLACTIVETEXTURE pglActiveTexture = NULL;
+@@ -237,7 +237,7 @@ void osd_init(int width, int height)
+         return;
+     }
+ 
+-    fontpath = ConfigGetSharedDataFilepath(FONT_FILENAME);
++    fontpath = FONT_FILENAME;
+ 
+     l_font = new OGLFT::Monochrome(fontpath, (float) height / 35.0f);  // make font size proportional to screen height
+ 

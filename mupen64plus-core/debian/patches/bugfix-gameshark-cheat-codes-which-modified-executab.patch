@@ -1,0 +1,37 @@
+From: Richard Goedeken <Richard@fascinationsoftware.com>
+Date: Sat, 6 Jun 2015 21:58:46 -0700
+Subject: bugfix: gameshark cheat codes which modified executable program code
+ were not marking cached code pages dirty, and thus usually didn't work
+
+Origin: upstream, https://github.com/mupen64plus/mupen64plus-core/commit/44fb3c3670f59dfa0a51c6c5db1d585eb4bba5ea
+---
+ src/main/cheat.c | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/src/main/cheat.c b/src/main/cheat.c
+index e7149b7..4347a9a 100644
+--- a/src/main/cheat.c
++++ b/src/main/cheat.c
+@@ -38,6 +38,7 @@
+ #include "main.h"
+ #include "memory/memory.h"
+ #include "osal/preproc.h"
++#include "r4300/r4300_core.h"
+ #include "rom.h"
+ 
+ #define __STDC_FORMAT_MACROS
+@@ -80,11 +81,14 @@ static unsigned char read_address_8bit(unsigned int address)
+ static void update_address_16bit(unsigned int address, unsigned short new_value)
+ {
+     *(unsigned short *)(((unsigned char*)g_rdram + ((address & 0xFFFFFF)^S16))) = new_value;
++    address &= 0xfeffffff;  // mask out bit 24 which is used by GS codes to specify 8/16 bits
++    invalidate_r4300_cached_code(address, 2);
+ }
+ 
+ static void update_address_8bit(unsigned int address, unsigned char new_value)
+ {
+     *(unsigned char *)(((unsigned char*)g_rdram + ((address & 0xFFFFFF)^S8))) = new_value;
++    invalidate_r4300_cached_code(address, 1);
+ }
+ 
+ static int address_equal_to_8bit(unsigned int address, unsigned char value)

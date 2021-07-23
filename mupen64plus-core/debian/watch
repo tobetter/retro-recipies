@@ -1,0 +1,5 @@
+version=4
+
+opts="pgpsigurlmangle=s/$/.asc/" \
+ https://github.com/mupen64plus/mupen64plus-core/releases \
+	/mupen64plus/mupen64plus-core/releases/download/[^/]+/mupen64plus-core-src-(.*\d).tar.gz

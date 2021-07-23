@@ -1,0 +1,21 @@
+From: Sven Eckelmann <sven@narfation.org>
+Date: Wed, 30 Dec 2015 23:48:38 +0100
+Subject: Fix spelling errors
+
+---
+ src/debugger/dbg_breakpoints.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/debugger/dbg_breakpoints.c b/src/debugger/dbg_breakpoints.c
+index 2055a94..73530d0 100644
+--- a/src/debugger/dbg_breakpoints.c
++++ b/src/debugger/dbg_breakpoints.c
+@@ -126,7 +126,7 @@ void remove_breakpoint_by_address( uint32 address )
+     int bpt = lookup_breakpoint( address, 1, 0 );
+     if(bpt==-1)
+     {
+-        DebugMessage(M64MSG_ERROR, "Tried to remove Nonexistant breakpoint %x!", address);
++        DebugMessage(M64MSG_ERROR, "Tried to remove nonexistent breakpoint %x!", address);
+     }
+     else
+         remove_breakpoint_by_num( bpt );

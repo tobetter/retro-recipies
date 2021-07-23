@@ -1,0 +1,31 @@
+From: Sven Eckelmann <sven@narfation.org>
+Date: Sun, 10 May 2015 11:23:56 +0200
+Subject: Remove unused GLESv2 library
+
+---
+ projects/unix/Makefile | 12 ------------
+ 1 file changed, 12 deletions(-)
+
+diff --git a/projects/unix/Makefile b/projects/unix/Makefile
+index 0d33fb7..901ddfc 100755
+--- a/projects/unix/Makefile
++++ b/projects/unix/Makefile
+@@ -273,18 +273,6 @@ endif
+ 
+ ifeq ($(USE_GLES), 1)
+   CFLAGS += -DUSE_GLES
+-
+-  GLESV2_NAME ?= glesv2
+-  ifeq ($(origin GLESV2_CFLAGS) $(origin GLESV2_LDLIBS), undefined undefined)
+-    ifeq ($(shell $(PKG_CONFIG) --modversion $(GLESV2_NAME) 2>/dev/null),)
+-      $(error No $(GLESV2_NAME) development libraries found!)
+-    endif
+-    GLESV2_CFLAGS += $(shell $(PKG_CONFIG) --cflags $(GLESV2_NAME))
+-    GLESV2_LDLIBS +=  $(shell $(PKG_CONFIG) --libs $(GLESV2_NAME))
+-  endif
+-  CFLAGS += $(GLESV2_CFLAGS)
+-  LDLIBS += $(GLESV2_LDLIBS)
+-
+   # OSD uses non-ES code and breaks attribs of video plugins
+   OSD=0
+ endif

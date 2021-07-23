@@ -1,0 +1,24 @@
+From: Bobby Smiles <bobby.smiles32@gmail.com>
+Date: Mon, 23 Mar 2020 18:17:40 +0100
+Subject: Fix multiple definition errors
+
+Fixes issue 712 reported by @mazes-80.
+
+Origin: backport, https://github.com/mupen64plus/mupen64plus-core/commit/39975200ad4926cfc79c96609b64696289065502
+Bug-Debian: https://bugs.debian.org/966344
+---
+ src/main/workqueue.h | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/src/main/workqueue.h b/src/main/workqueue.h
+index 2228359..a2d08b5 100644
+--- a/src/main/workqueue.h
++++ b/src/main/workqueue.h
+@@ -27,7 +27,6 @@
+ 
+ struct work_struct;
+ 
+-struct work_struct *work;
+ typedef void (*work_func_t)(struct work_struct *work);
+ struct work_struct {
+     work_func_t func;

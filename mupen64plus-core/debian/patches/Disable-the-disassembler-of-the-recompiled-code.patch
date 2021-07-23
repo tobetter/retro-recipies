@@ -1,0 +1,43 @@
+From: Sven Eckelmann <sven@narfation.org>
+Date: Mon, 28 May 2012 14:14:12 +0200
+Subject: Disable the disassembler of the recompiled code
+
+The interface of libopcode.so and libbfd.so is not stable and therefore not
+allowed to use in Debian. The libopcode.a and libbfd.a don't provide PIC
+object files and therefore cannot be linked to the PIC shared object.
+
+This part of the debugging interface can be disabled because their is no known
+user interface that has support for it.
+
+Forwarded: not-needed
+---
+ projects/unix/Makefile    | 2 +-
+ src/debugger/dbg_memory.c | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/projects/unix/Makefile b/projects/unix/Makefile
+index f4f26b4..7d5e848 100755
+--- a/projects/unix/Makefile
++++ b/projects/unix/Makefile
+@@ -575,7 +575,7 @@ ifeq ($(DEBUGGER), 1)
+ 	$(SRCDIR)/debugger/dbg_decoder.c \
+ 	$(SRCDIR)/debugger/dbg_memory.c \
+ 	$(SRCDIR)/debugger/dbg_breakpoints.c
+-  LDLIBS += -lopcodes -lbfd
++#  LDLIBS += -lopcodes -lbfd
+ endif
+ 
+ # generate a list of object files to build, make a temporary directory for them
+diff --git a/src/debugger/dbg_memory.c b/src/debugger/dbg_memory.c
+index f11304b..55f84be 100644
+--- a/src/debugger/dbg_memory.c
++++ b/src/debugger/dbg_memory.c
+@@ -42,7 +42,7 @@
+ #include "si/si_controller.h"
+ #include "vi/vi_controller.h"
+ 
+-#if !defined(NO_ASM) && (defined(__i386__) || defined(__x86_64__))
++#if !defined(NO_ASM) && (defined(__i386__) || defined(__x86_64__)) && 0
+ 
+ /* we must define PACKAGE so that bfd.h (which is included from dis-asm.h) doesn't throw an error */
+ #define PACKAGE "mupen64plus-core"

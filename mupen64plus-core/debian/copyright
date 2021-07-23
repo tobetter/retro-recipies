@@ -1,0 +1,465 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: mupen64plus-core
+Upstream-Contact: mupen64plus@googlegroups.com
+Source: https://github.com/mupen64plus/mupen64plus-core
+
+Files: *
+Copyright: 2008-2013, Richard 'Richard42' Goedeken <Richard@fascinationsoftware.com>
+License: GPL-2+
+
+Files: data/mupencheat.txt
+Copyright: 2008, Gent
+License: GPL-2+
+
+Files: data/font.ttf
+Copyright: 2003 Bitstream, Inc.
+License: other
+ Copyright (C) 2003 Bitstream, Inc.
+ All Rights Reserved. Bitstream Vera is a trademark of Bitstream, Inc.
+ .
+ Permission is hereby granted, free of charge, to any person obtaining a
+ copy of the fonts accompanying this license ("Fonts") and associated
+ documentation files (the "Font Software"), to reproduce and distribute
+ the Font Software, including without limitation the rights to use, copy,
+ merge, publish, distribute, and/or sell copies of the Font Software, and
+ to permit persons to whom the Font Software is furnished to do so,
+ subject to the following conditions:
+ .
+ The above copyright and trademark notices and this permission notice
+ shall be included in all copies of one or more of the Font Software
+ typefaces.
+ .
+ The Font Software may be modified, altered, or added to, and in
+ particular the designs of glyphs or characters in the Fonts may be
+ modified and additional glyphs or characters may be added to the Fonts,
+ only if the fonts are renamed to names not containing either the words
+ "Bitstream" or the word "Vera".
+ .
+ This License becomes null and void to the extent applicable to Fonts or
+ Font Software that has been modified and is distributed under the
+ "Bitstream Vera" names.
+ .
+ The Font Software may be sold as part of a larger software package but
+ no copy of one or more of the Font Software typefaces may be sold by
+ itself.
+ .
+ THE FONT SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF
+ MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT OF
+ COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL
+ BITSTREAM OR THE GNOME FOUNDATION BE LIABLE FOR ANY CLAIM, DAMAGES OR
+ OTHER LIABILITY, INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL,
+ OR CONSEQUENTIAL DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+ OTHERWISE, ARISING FROM, OUT OF THE USE OR INABILITY TO USE THE FONT
+ SOFTWARE OR FROM OTHER DEALINGS IN THE FONT SOFTWARE.
+ .
+ Except as contained in this notice, the names of Gnome, the Gnome
+ Foundation, and Bitstream Inc., shall not be used in advertising or
+ otherwise to promote the sale, use or other dealings in this Font
+ Software without prior written authorization from the Gnome Foundation
+ or Bitstream Inc., respectively. For further information, contact:
+ <fonts@gnome.org>.
+
+Files: debian/*
+Copyright: 2009-2020, Sven Eckelmann <sven@narfation.org>
+  2009-2020, Tobias Loose <TobiasLoose@gmx.de>
+License: GPL-2+
+
+Files: projects/unix/Makefile
+Copyright: 2007-2008, Jesse 'DarkJezter' Dean
+           2007-2008, Scott 'Tillin9' Knauert
+           2008-2009, Richard 'Richard42' Goedeken <Richard@fascinationsoftware.com>
+License: GPL-2+
+
+Files: src/*
+Copyright: 2014, Bobby Smiles
+License: GPL-2+
+
+Files: src/api/*
+Copyright: 2009, Richard 'Richard42' Goedeken <Richard@fascinationsoftware.com>
+License: GPL-2+
+
+Files: src/api/frontend.c
+  src/api/m64p_types.h
+Copyright: 2012, CasualJames <casual.james@yahoo.es>
+  2009, Richard 'Richard42' Goedeken <Richard@fascinationsoftware.com>
+License: GPL-2+
+
+Files: src/api/m64p_plugin.h
+Copyright: 2009, Richard 'Richard42' Goedeken <Richard@fascinationsoftware.com>
+  2002, Hacktarux
+License: GPL-2+
+
+Files: src/api/vidext_sdl2_compat.h
+Copyright: 1997-2012, Sam Lantinga <slouken@libsdl.org>
+License: Zlib
+
+Files: src/debugger/*
+Copyright: 2002, davFr
+  2008, DarkJeztr
+License: GPL-2+
+
+Files: src/debugger/dbg_breakpoints.c
+  src/debugger/dbg_breakpoints.h
+Copyright: 2008, DarkJeztr
+  2008, HyperHacker
+License: GPL-2+
+
+Files: src/debugger/dbg_decoder.c
+  src/debugger/dbg_decoder_local.h
+Copyright: 2010, Marshall B. Rogers <mbr@64.vg>
+  1991-1993, The Regents of the University of California
+License: GPL-2+
+
+Files: src/debugger/dbg_decoder.h
+Copyright: 2010, Marshall B. Rogers <mbr@64.vg>
+License: GPL-2+
+
+Files: src/debugger/dbg_memory.c
+Copyright: 2008, DarkJeztr
+  2002, Gregor 'Blight' Anich <blight@fuckmicrosoft.com>
+License: GPL-2+
+
+Files: src/debugger/dbg_types.h
+Copyright: 2002, davFr
+License: GPL-2+
+
+Files: src/main/*
+Copyright: 2012, Mupen64plus development team
+License: GPL-2+
+
+Files: src/main/cheat.c
+Copyright: 2009, Richard 'Richard42' Goedeken <Richard@fascinationsoftware.com>
+  2008, Scott 'okaygo' Gorman
+License: GPL-2+
+
+Files: src/main/cheat.h
+Copyright: 2008, Scott 'okaygo' Gorman
+License: GPL-2+
+
+Files: src/main/eventloop.c
+Copyright: 2008-2009, Richard 'Richard42' Goedeken <Richard@fascinationsoftware.com>
+ 2008, James 'Ebenblues' Hood
+ 2008, John 'NMN' Chadwick
+ 2008, Scott 'okaygo' Gorman
+ 2008, Scott 'Tillin9' Knauert
+License: GPL-2+
+
+Files: src/main/eventloop.h
+Copyright: 2008-2013, Richard 'Richard42' Goedeken <Richard@fascinationsoftware.com>
+License: GPL-2+
+
+Files: src/main/lirc.c
+  src/main/lirc.h
+Copyright: : 2008,DarkJezter
+License: GPL-2+
+
+Files: src/main/list.h
+  src/main/sdl_key_converter.c
+  src/main/sdl_key_converter.h
+  src/main/workqueue.c
+  src/main/workqueue.h
+Copyright: 2012, 2013, Mupen64plus development team
+License: GPL-2+
+
+Files: src/main/main.c
+Copyright: 2012, CasualJames <casual.james@yahoo.es>
+ 2008-2009, Richard 'Richard42' Goedeken <Richard@fascinationsoftware.com>
+ 2008, James 'Ebenblues' Hood
+ 2008, John 'NMN' Chadwick
+ 2008, Scott 'okaygo' Gorman
+ 2008, Scott 'Tillin9' Knauert
+ 2002, Hacktarux
+License: GPL-2+
+
+Files: src/main/main.h
+Copyright: 2012, CasualJames <casual.james@yahoo.es>
+  2002, Gregor 'Blight' Anich <blight@fuckmicrosoft.com>
+License: GPL-2+
+
+Files: src/main/md5.c
+  src/main/md5.h
+Copyright: 1999, 2000, 2002, Aladdin Enterprises.
+License: Zlib
+
+Files: src/main/profile.c
+  src/main/profile.h
+Copyright: 2014, Bobby Smiles
+  2012, CasualJames <casual.james@yahoo.es>
+  2002, Hacktarux
+License: GPL-2+
+
+Files: src/main/rom.c
+  src/main/rom.h
+Copyright: 2008, Scott 'Tillin9' Knauert
+ 2002, Hacktarux
+License: GPL-2+
+
+Files: src/main/savestates.c
+  src/main/savestates.h
+Copyright: 2012, CasualJames <casual.james@yahoo.es>
+ 2009, Olejl
+ 2009, Scott 'Tillin9' Knauert
+ 2008, Richard 'Richard42' Goedeken <Richard@fascinationsoftware.com>
+ 2008, Scott 'Tillin9' Knauert
+ 2002, Hacktarux
+License: GPL-2+
+
+Files: src/main/util.c
+  src/main/util.h
+Copyright: 2012, CasualJames <casual.james@yahoo.es>
+  2002, Hacktarux
+License: GPL-2+
+
+Files: src/main/version.h
+Copyright: 2008-2012, Richard 'Richard42' Goedeken <Richard@fascinationsoftware.com>
+ 2008-2012, DarkJeztr
+ 2008-2012, Scott 'Tillin9' Knauert
+License: GPL-2+
+
+Files: src/main/zip/crypt.h
+Copyright: 1998-2005, Gilles Vollant
+License: Zlib
+
+Files: src/main/zip/unzip.c
+ src/main/zip/unzip.h
+Copyright: 2009-2010, Mathias Svensson
+  2007-2008, Even Rouault
+  1998-2010, Gilles Vollant
+License: Zlib
+
+Files: src/main/zip/zip.c
+ src/main/zip/zip.h
+Copyright: 2009-2010, Mathias Svensson
+  1998-2010, Gilles Vollant
+License: Zlib
+
+Files: src/memory/*
+Copyright: 2002, Hacktarux
+  2012, CasualJames <casual.james@yahoo.es>
+License: GPL-2+
+
+Files: src/osal/*
+Copyright: 2008-2013, Richard 'Richard42' Goedeken <Richard@fascinationsoftware.com>
+License: GPL-2+
+
+Files: src/osd/*
+Copyright: 2002, lignum Computing, Inc. <oglft@lignumcomputing.com>
+License: LGPL-2.1+
+
+Files: src/osd/OGLFT.cpp
+  src/osd/OGLFT.h
+Copyright: 2002, lignum Computing, Inc. <oglft@lignumcomputing.com>
+License: LGPL-2.1+
+
+Files: src/osd/osd.cpp
+Copyright: 2008, John 'NMN' Chadwick
+ 2008, James 'Ebenblues' Hood
+License: GPL-2+
+
+Files: src/osd/osd.h
+Copyright: 2008, John 'NMN' Chadwick
+ 2008, James 'Ebenblues' Hood
+License: GPL-2+
+
+Files: src/pi/flashram.c
+  src/pi/flashram.h
+Copyright: 2014, Bobby Smiles
+  2002, Hacktarux
+License: GPL-2+
+
+Files: src/plugin/dummy_audio.c
+  src/plugin/dummy_audio.h
+  src/plugin/dummy_input.h
+  src/plugin/dummy_rsp.c
+  src/plugin/dummy_video.h
+Copyright: 2008-2013, Richard 'Richard42' Goedeken <Richard@fascinationsoftware.com>
+License: GPL-2+
+
+Files: src/plugin/dummy_input.c
+Copyright: 2009, Richard 'Richard42' Goedeken <Richard@fascinationsoftware.com>
+  2008, Scott 'okaygo' Gorman
+License: GPL-2+
+
+Files: src/plugin/dummy_rsp.h
+Copyright: 2009, Richard 'Richard42' Goedeken <Richard@fascinationsoftware.com>
+License: GPL-2+
+
+Files: src/plugin/dummy_video.c
+Copyright: 2009, Richard 'Richard42' Goedeken <Richard@fascinationsoftware.com>
+  2008, John 'NMN' Chadwick
+License: GPL-2+
+
+Files: src/plugin/plugin.c
+  src/plugin/plugin.h
+Copyright: 2009, Richard 'Richard42' Goedeken <Richard@fascinationsoftware.com>
+  2002, Hacktarux
+License: GPL-2+
+
+Files: src/r4300/*
+Copyright: 2002, Hacktarux
+  2007-2009, Richard 'Richard42' Goedeken <Richard@fascinationsoftware.com>
+License: GPL-2+
+
+Files: src/r4300/empty_dynarec.c
+Copyright: 2002, Richard 'Richard42' Goedeken <Richard@fascinationsoftware.com>
+ 2002, John 'NMN' Chadwick
+ 2002, Hacktarux
+License: GPL-2+
+
+Files: src/r4300/fpu.h
+Copyright: 2010, Ari64
+License: GPL-2+
+
+Files: src/r4300/mi_controller.c
+  src/r4300/mi_controller.h
+  src/r4300/r4300_core.c
+  src/r4300/r4300_core.h
+Copyright: 2014, Bobby Smiles *
+License: GPL-2+
+
+Files: src/r4300/new_dynarec/*
+Copyright: 2009-2011, Ari64
+License: GPL-2+
+
+Files: src/r4300/new_dynarec/arm/*
+Copyright: 2015, Gilles Siberlin
+License: GPL-2+
+
+Files: src/r4300/new_dynarec/arm/assem_arm.c
+Copyright: 2009-2011, Ari64
+License: GPL-2+
+
+Files: src/r4300/new_dynarec/new_dynarec.h
+Copyright: 2002, Hacktarux
+License: GPL-2+
+
+Files: src/r4300/pure_interp.c
+Copyright: 2015, Nebuleon <nebuleon.fumika@gmail.com>
+License: GPL-2+
+
+Files: src/r4300/reset.c
+Copyright: 2011, CasualJames
+ 2008-2009, Richard 'Richard42' Goedeken <Richard@fascinationsoftware.com>
+ 2008, James 'Ebenblues' Hood
+ 2008, John 'NMN' Chadwick
+ 2008, Scott 'okaygo' Gorman
+ 2008, Scott 'Tillin9' Knauert
+License: GPL-2+
+
+Files: src/r4300/reset.h
+Copyright: 2011, CasualJames
+License: GPL-2+
+
+Files: src/r4300/x86_64/*
+Copyright: 2002, Hacktarux
+  2007-2009, Richard 'Richard42' Goedeken <Richard@fascinationsoftware.com>
+License: GPL-2+
+
+Files: src/si/n64_cic_nus_6105.c
+  src/si/n64_cic_nus_6105.h
+Copyright: 2011, X-Scale
+License: BSD-2-clause
+
+Files: src/si/pif.c
+  src/si/pif.h
+Copyright: 2002, Hacktarux
+License: GPL-2+
+
+Files: tools/*
+Copyright: 2008-2013, Richard 'Richard42' Goedeken <Richard@fascinationsoftware.com>
+License: GPL-2+
+
+Files: tools/cheat_code_convert.py
+Copyright: 2010, Rhett Osborne
+License: GPL-2+
+
+Files: tools/gen_sdl_key_converter.c
+Copyright: 2012, 2013, Mupen64plus development team *
+License: GPL-2+
+
+Files: tools/install_binary_bundle.sh
+  tools/uninstall_binary_bundle.sh
+Copyright: 2007-2014, The Mupen64Plus Development Team
+License: GPL-2+
+
+Files: tools/regtests/*
+Copyright: 2008-2012, Richard 'Richard42' Goedeken <Richard@fascinationsoftware.com>
+License: GPL-2+
+
+License: BSD-2-clause
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions are met:
+ .
+    1. Redistributions of source code must retain the above copyright notice,
+       this list of conditions and the following disclaimer.
+    2. Redistributions in binary form must reproduce the above copyright
+       notice, this list of conditions and the following disclaimer in the
+       documentation and/or other materials provided with the distribution.
+ .
+ THIS SOFTWARE IS PROVIDED BY X-Scale ``AS IS'' AND ANY EXPRESS OR IMPLIED
+ WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+ MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
+ EVENT SHALL X-Scale OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+ OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+ LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+ NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+License: GPL-2+
+ This program is free software; you can redistribute it
+ and/or modify it under the terms of the GNU General Public
+ License as published by the Free Software Foundation; either
+ version 2 of the License, or (at your option) any later
+ version.
+ .
+ This program is distributed in the hope that it will be
+ useful, but WITHOUT ANY WARRANTY; without even the implied
+ warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+ PURPOSE.  See the GNU General Public License for more
+ details.
+ .
+ You should have received a copy of the GNU General Public
+ License along with this package; if not, write to the Free
+ Software Foundation, Inc., 51 Franklin St, Fifth Floor,
+ Boston, MA  02110-1301 USA
+ .
+ On Debian systems, the full text of the GNU General Public
+ License version 2 can be found in the file
+ `/usr/share/common-licenses/GPL-2'.
+
+License: LGPL-2.1+
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ .
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ .
+ You should have received a copy of the GNU Lesser General Public
+ License along with this library; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ .
+ On Debian systems the full text of the GNU Lesser General Public License,
+ version 2.1 or later, can be found in the `/usr/share/common-licenses/LGPL-2.1'
+ file.
+
+License: Zlib
+ Permission is granted to anyone to use this software for any purpose,
+ including commercial applications, and to alter it and redistribute it
+ freely, subject to the following restrictions:
+ .
+ 1. The origin of this software must not be misrepresented; you must not
+    claim that you wrote the original software. If you use this software
+    in a product, an acknowledgment in the product documentation would be
+    appreciated but is not required.
+ 2. Altered source versions must be plainly marked as such, and must not be
+    misrepresented as being the original software.
+ 3. This notice may not be removed or altered from any source distribution.
+ .
+ This code is a modified version of crypting code in Infozip distribution
