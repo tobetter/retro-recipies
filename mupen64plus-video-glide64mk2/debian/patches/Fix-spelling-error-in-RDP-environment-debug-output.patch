@@ -1,0 +1,64 @@
+From: Sven Eckelmann <sven@narfation.org>
+Date: Tue, 27 Aug 2019 23:10:30 +0200
+Subject: Fix spelling error in RDP environment debug output
+
+Signed-off-by: Sven Eckelmann <sven@narfation.org>
+
+Forwarded: no
+---
+ src/Glide64/rdp.cpp | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+
+diff --git a/src/Glide64/rdp.cpp b/src/Glide64/rdp.cpp
+index 579a785..e5ad80e 100644
+--- a/src/Glide64/rdp.cpp
++++ b/src/Glide64/rdp.cpp
+@@ -64,7 +64,7 @@ const char *ACmp[] = { "NONE", "THRESHOLD", "UNKNOWN", "DITHER" };
+ 
+ const char *Mode0[] = { "COMBINED",    "TEXEL0",
+             "TEXEL1",     "PRIMITIVE",
+-            "SHADE",      "ENVIORNMENT",
++            "SHADE",      "ENVIRONMENT",
+             "1",        "NOISE",
+             "0",        "0",
+             "0",        "0",
+@@ -73,7 +73,7 @@ const char *Mode0[] = { "COMBINED",    "TEXEL0",
+ 
+ const char *Mode1[] = { "COMBINED",    "TEXEL0",
+             "TEXEL1",     "PRIMITIVE",
+-            "SHADE",      "ENVIORNMENT",
++            "SHADE",      "ENVIRONMENT",
+             "CENTER",     "K4",
+             "0",        "0",
+             "0",        "0",
+@@ -82,7 +82,7 @@ const char *Mode1[] = { "COMBINED",    "TEXEL0",
+ 
+ const char *Mode2[] = { "COMBINED",    "TEXEL0",
+             "TEXEL1",     "PRIMITIVE",
+-            "SHADE",      "ENVIORNMENT",
++            "SHADE",      "ENVIRONMENT",
+             "SCALE",      "COMBINED_ALPHA",
+             "T0_ALPHA",     "T1_ALPHA",
+             "PRIM_ALPHA",   "SHADE_ALPHA",
+@@ -99,18 +99,18 @@ const char *Mode2[] = { "COMBINED",    "TEXEL0",
+ 
+ const char *Mode3[] = { "COMBINED",    "TEXEL0",
+             "TEXEL1",     "PRIMITIVE",
+-            "SHADE",      "ENVIORNMENT",
++            "SHADE",      "ENVIRONMENT",
+             "1",        "0" };
+ 
+ const char *Alpha0[] = { "COMBINED",   "TEXEL0",
+             "TEXEL1",     "PRIMITIVE",
+-            "SHADE",      "ENVIORNMENT",
++            "SHADE",      "ENVIRONMENT",
+             "1",        "0" };
+ 
+ #define Alpha1 Alpha0
+ const char *Alpha2[] = { "LOD_FRACTION", "TEXEL0",
+             "TEXEL1",     "PRIMITIVE",
+-            "SHADE",      "ENVIORNMENT",
++            "SHADE",      "ENVIRONMENT",
+             "PRIM_LODFRAC",   "0" };
+ #define Alpha3 Alpha0
+ 

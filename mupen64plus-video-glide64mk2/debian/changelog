@@ -1,0 +1,149 @@
+mupen64plus-video-glide64mk2 (2.5-7build2) hirsute; urgency=medium
+
+  * No-change rebuild for boost soname change.
+
+ -- Matthias Klose <doko@ubuntu.com>  Sat, 12 Dec 2020 13:08:57 +0100
+
+mupen64plus-video-glide64mk2 (2.5-7build1) focal; urgency=medium
+
+  * No change rebuild against new boost1.71 ABI
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Mon, 03 Feb 2020 21:08:34 +0000
+
+mupen64plus-video-glide64mk2 (2.5-7) unstable; urgency=medium
+
+  * debian/control
+    - Automatically select correct Vcs-Git branch
+    - Upgraded to policy 4.4.0, no changes required
+    - Switch to debhelper 12
+  * debian/patches:
+    - Add Fix-spelling-error-in-RDP-environment-debug-output.patch, Fix
+      spelling error in RDP environment debug output
+  * debian/rules
+    - Allow one to override pkg-config for crossbuilds
+  * debian/copyright
+    - Update copyright years to 2019
+
+ -- Sven Eckelmann <sven@narfation.org>  Wed, 28 Aug 2019 00:05:29 +0200
+
+mupen64plus-video-glide64mk2 (2.5-6) unstable; urgency=medium
+
+  * Upgraded to policy 4.2.1
+    - remove get-orig-source rule from debian/rules
+  * debian/rules
+    - Drop (now default) parameter --parallel for dch
+
+ -- Sven Eckelmann <sven@narfation.org>  Thu, 18 Oct 2018 21:55:45 +0200
+
+mupen64plus-video-glide64mk2 (2.5-5) unstable; urgency=medium
+
+  * debian/control
+    - Change Vcs-Git to https://
+    - update to debhelper 10
+    - Switch to salsa URLs for Vcs-*
+  * Sort debian control files with `wrap-and-sort -abst`
+  * Upgraded to policy 4.1.3, no changes required
+  * debian/copyright:
+    - Update copyright years
+  * debian/rules
+    - Remove ddeb migration conflict against pre-stretch package
+    - Disable usage of libtxc-dxtn0 which is no longer available
+      (Closes: #889606)
+
+ -- Sven Eckelmann <sven@narfation.org>  Mon, 05 Feb 2018 08:37:04 +0100
+
+mupen64plus-video-glide64mk2 (2.5-4) unstable; urgency=medium
+
+  * debian/rules:
+    -  Build armhf for reproducible CI with GLES
+
+ -- Sven Eckelmann <sven@narfation.org>  Thu, 14 Jan 2016 23:12:34 +0100
+
+mupen64plus-video-glide64mk2 (2.5-3) unstable; urgency=medium
+
+  * debian/control, debian/rules:
+     - Drop mupen64plus-video-glide64mk2-dbg in favor of -dbgsym package
+  * debian/patches:
+    - Add Fix-spelling-errors.patch, Fix spelling errors
+  * Update copyright years in debian/copyright
+
+ -- Sven Eckelmann <sven@narfation.org>  Fri, 01 Jan 2016 14:01:21 +0100
+
+mupen64plus-video-glide64mk2 (2.5-2) unstable; urgency=medium
+
+  * debian/patches:
+    - Move patches to alternative DEP-3 format and manage them with gbp pq
+    - Add Use-pkg-config-to-find-GLESv2-library.patch, Use pkg-config to
+      find GLESv2 library
+  * debian/control:
+    - Move Vcs URLs from collab-maint to pkg-games
+    - Update upstream URLs
+    - Set Maintainer to Debian Games Team
+
+ -- Sven Eckelmann <sven@narfation.org>  Thu, 26 Nov 2015 07:52:31 +0100
+
+mupen64plus-video-glide64mk2 (2.5-1) unstable; urgency=medium
+
+  * New Upstream Version
+  * debian/control:
+    - Upgraded to policy 3.9.6, no changes required
+    - Change Vcs-Browser to new alioth CGit URL
+  * debian/copyright:
+    - Update years
+    - Fix errors in paths to specific files
+    - Reorder copyright sections and remove some wildcards
+    - Add new files in 2.5
+  * debian/patches:
+    - Remove upstream merged empty_dlist.patch, init_quit.patch,
+      kfreebsd_hurd_support.patch, load_hires_cache.patch,
+      mesa_fxt1.patch, old_glgethandlearb_program_object.patch,
+      path_max_war.patch, s3tc_removal.patch, shader_reset.patch
+    - Add revert_forced_linux_flto_jobserver.patch, Remove forced
+      flto=jobserver on linux
+    - Add fix_negative_framebuffers_indices.patch, Fix negative
+      frame_buffer indices
+    - Add fix_segfault_on_texture_load.patch, Fix segfault when loading
+      4bCI texture with negative ext
+  * Add debian/upstream/metadata with some contact addresses of the
+    upstream project
+
+ -- Sven Eckelmann <sven@narfation.org>  Sat, 02 May 2015 12:19:45 +0200
+
+mupen64plus-video-glide64mk2 (2.0-3) unstable; urgency=low
+
+  * Upgraded to policy 3.9.5, no changes required
+  * debian/patches:
+    - Add shader_reset.patch, Set shader again after displaying OSD
+    - Add empty_dlist.patch, Handle empty display list to avoid infinite loop
+    - Add old_glgethandlearb_program_object.patch, Use glGetHandleARB to get
+      program object
+    - Add DEP-3 origin information
+  * debian/watch:
+    - Change upstream check from bitbucket to github
+  * debian/copyright:
+    - Change upstream source to github
+  * debian/get-orig-source.sh
+    - Change upstream repository to github
+    - Change SCM from Mercurial to Git
+  * Update copyright years in debian/copyright
+  * Move keyring for signature verification to new debian/upstream/
+  * debian/rules:
+    - Use Largefile Support enabled C API
+
+ -- Sven Eckelmann <sven@narfation.org>  Sat, 30 Aug 2014 18:10:37 +0200
+
+mupen64plus-video-glide64mk2 (2.0-2) unstable; urgency=low
+
+  * debian/patches:
+    - Add load_hires_cache.patch, Enable the dump_cache to allow loading of
+      *.dat files
+    - Add kfreebsd_hurd_support.patch, Allow to compile under kFreeBSD and Hurd
+    - Add path_max_war.patch, Add a workaround for systems not defining PATH_MAX
+
+ -- Sven Eckelmann <sven@narfation.org>  Sun, 01 Sep 2013 13:06:09 +0200
+
+mupen64plus-video-glide64mk2 (2.0-1) unstable; urgency=low
+
+  * Initial release (Closes: #714994)
+
+ -- Sven Eckelmann <sven@narfation.org>  Wed, 10 Jul 2013 23:25:40 +0200

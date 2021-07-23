@@ -1,0 +1,6 @@
+Remove-forced-flto-jobserver-on-linux.patch
+Fix-negative-frame_buffer-indices.patch
+Fix-segfault-when-loading-with-4bCI-texture-with-neg.patch
+Use-pkg-config-to-find-GLESv2-library.patch
+Fix-spelling-errors.patch
+Fix-spelling-error-in-RDP-environment-debug-output.patch

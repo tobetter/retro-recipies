@@ -1,0 +1,30 @@
+From: Franz-Josef Haider <f_haider@gmx.at>
+Date: Mon, 27 Apr 2015 19:42:00 +0200
+Subject: Remove forced flto=jobserver on linux
+
+Origin: upstream, https://github.com/mupen64plus/mupen64plus-video-glide64mk2/commit/7013f4d34663b373d473363f25656f123df00bc4
+---
+ projects/unix/Makefile | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+diff --git a/projects/unix/Makefile b/projects/unix/Makefile
+index 42295bb..05ae91b 100755
+--- a/projects/unix/Makefile
++++ b/projects/unix/Makefile
+@@ -122,7 +122,7 @@ ifeq ("$(CPU)","NONE")
+ endif
+ 
+ # base CFLAGS, LDLIBS, and LDFLAGS
+-OPTFLAGS ?= -O3
++OPTFLAGS ?= -O3 -flto=jobserver
+ WARNFLAGS ?= -Wall -Wno-unused-function
+ CFLAGS += $(OPTFLAGS) $(WARNFLAGS) -ffast-math -fno-strict-aliasing -fvisibility=hidden -I../../src -I../../src/Glitch64/inc -DGCC
+ CXXFLAGS += -fvisibility-inlines-hidden -std=gnu++0x
+@@ -156,7 +156,6 @@ endif
+ 
+ # set special flags per-system
+ ifeq ($(OS), LINUX)
+-  OPTFLAGS += -flto=jobserver
+   # only export api symbols
+   LDFLAGS += -Wl,-version-script,$(SRCDIR)/video_api_export.ver
+   LDLIBS += -ldl
