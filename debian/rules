@@ -50,4 +50,4 @@ ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
 endif
 
 override_dh_strip:
-	dh_strip -pdolphin-emu-master --dbg-package=dolphin-emu-master-dbg
+	dh_strip -pdolphin-emu-libretro --dbg-package=dolphin-emu-libretro-dbg

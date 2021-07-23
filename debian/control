@@ -1,4 +1,4 @@
-Source: dolphin-emu-master
+Source: dolphin-emu-libretro
 Section: games
 Priority: optional
 Maintainer: Glenn Rice <glennricster@gmail.com>
@@ -35,11 +35,12 @@ Build-Depends:	debhelper (>= 9),
 				qtbase5-private-dev,
 				zlib1g-dev (>= 1.2.8)
 Standards-Version: 3.9.8
+Vcs-Git: https://github.com/libretro/dolphin.git
 Homepage: http://dolphin-emu.org/
 
-Package: dolphin-emu-master
+Package: dolphin-emu-libretro
 Architecture: amd64 arm64
-Depends: ${shlibs:Depends}, ${misc:Depends}, dolphin-emu-data-master (= ${source:Version})
+Depends: ${shlibs:Depends}, ${misc:Depends}, dolphin-emu-data-libretro (= ${source:Version})
 Conflicts: dolphin-emu, dolphin-emu-trunk
 Replaces: dolphin-emu, dolphin-emu-trunk
 Description: GameCube and Wii emulator
@@ -52,11 +53,11 @@ Description: GameCube and Wii emulator
  GameCube and Wii are registered trademarks of Nintendo of America Inc. Dolphin
  is not affiliated with or endorsed by the company mentioned.
 
-Package: dolphin-emu-master-dbg
+Package: dolphin-emu-libretro-dbg
 Section: debug
 Priority: extra
 Architecture: amd64 arm64
-Depends: dolphin-emu-master (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Depends: dolphin-emu-libretro (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Conflicts: dolphin-emu-dbg, dolphin-emu-trunk-dbg
 Replaces: dolphin-emu-dbg, dolphin-emu-trunk-dbg
 Description: GameCube and Wii emulator - debug symbols
@@ -69,16 +70,16 @@ Description: GameCube and Wii emulator - debug symbols
  GameCube and Wii are registered trademarks of Nintendo of America Inc. Dolphin
  is not affiliated with or endorsed by the company mentioned.
  .
- This package provides the debug symbols for dolphin-emu-master.
+ This package provides the debug symbols for dolphin-emu-libretro.
 
-Package: dolphin-emu-data-master
+Package: dolphin-emu-data-libretro
 Architecture: all
 Multi-Arch: foreign
 Depends: ${misc:Depends}
-Replaces: dolphin-emu-master (<< 5.0+git-r201701262047)
-Breaks: dolphin-emu-master (<< 5.0+git-r201701262047)
+Replaces: dolphin-emu-libretro (<< 5.0+git-r201701262047)
+Breaks: dolphin-emu-libretro (<< 5.0+git-r201701262047)
 Conflicts: dolphin-emu-data
-Suggests: dolphin-emu-master
+Suggests: dolphin-emu-libretro
 Description: Gamecube and Wii emulator - data files
  Dolphin is a GameCube, Wii and Triforce (the arcade machine based on the
  GameCube) emulator.
