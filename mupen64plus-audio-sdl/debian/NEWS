@@ -1,0 +1,26 @@
+mupen64plus-audio-sdl (1.99.5+7+d483528be393-1) experimental; urgency=low
+
+  The configuration format for RESAMPLE was changed from a simple numeric
+  representation to a string representation. It works similar to the
+  resample-method setting of pulseaudio, but will not automatically get
+  converted. Following values are possible:
+
+  * trivial (was setting "1")
+  * src-linear
+  * src-zero-order-hold
+  * src-sinc-fastest
+  * src-sinc-medium-quality
+  * src-sinc-best-quality (was setting "2")
+  * speex-fixed-0
+  * speex-fixed-1
+  * speex-fixed-2
+  * speex-fixed-3
+  * speex-fixed-4
+  * speex-fixed-5
+  * speex-fixed-6
+  * speex-fixed-7
+  * speex-fixed-8
+  * speex-fixed-9
+  * speex-fixed-10
+
+ -- Sven Eckelmann <sven@narfation.org>  Tue, 30 Oct 2012 18:39:12 +0100

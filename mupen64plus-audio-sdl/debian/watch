@@ -1,0 +1,5 @@
+version=3
+
+opts="pgpsigurlmangle=s/$/.asc/" \
+ https://github.com/mupen64plus/mupen64plus-audio-sdl/releases \
+	/mupen64plus/mupen64plus-audio-sdl/releases/download/[^/]+/mupen64plus-audio-sdl-src-(.*\d).tar.gz
