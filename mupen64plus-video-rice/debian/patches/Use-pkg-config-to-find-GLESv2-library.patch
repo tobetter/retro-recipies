@@ -1,0 +1,39 @@
+From: Sven Eckelmann <sven@narfation.org>
+Date: Sun, 10 May 2015 15:20:02 +0200
+Subject: Use pkg-config to find GLESv2 library
+
+---
+ projects/unix/Makefile | 11 ++++++-----
+ 1 file changed, 6 insertions(+), 5 deletions(-)
+
+diff --git a/projects/unix/Makefile b/projects/unix/Makefile
+index d827a25..7d2b2b8 100755
+--- a/projects/unix/Makefile
++++ b/projects/unix/Makefile
+@@ -200,7 +200,7 @@ ifeq ($(VC), 1)
+ endif
+ ifeq ($(USE_GLES), 1)
+   CFLAGS += -DUSE_GLES
+-  GL_LDLIBS += -lGLESv2
++  GL_NAME = glesv2
+ endif
+ ifeq ($(OS), OSX)
+   GL_LDLIBS = -framework OpenGL
+@@ -208,12 +208,13 @@ endif
+ ifeq ($(OS), MINGW)
+   GL_LDLIBS = -lopengl32
+ endif
++GL_NAME ?= gl
+ ifeq ($(origin GL_CFLAGS) $(origin GL_LDLIBS), undefined undefined)
+-  ifeq ($(shell $(PKG_CONFIG) --modversion gl 2>/dev/null),)
+-    $(error No OpenGL development libraries found!)
++  ifeq ($(shell $(PKG_CONFIG) --modversion $(GL_NAME) 2>/dev/null),)
++    $(error No $(GL_NAME) development libraries found!)
+   endif
+-  GL_CFLAGS += $(shell $(PKG_CONFIG) --cflags gl)
+-  GL_LDLIBS +=  $(shell $(PKG_CONFIG) --libs gl)
++  GL_CFLAGS += $(shell $(PKG_CONFIG) --cflags $(GL_NAME))
++  GL_LDLIBS +=  $(shell $(PKG_CONFIG) --libs $(GL_NAME))
+ endif
+ CFLAGS += $(GL_CFLAGS)
+ LDLIBS += $(GL_LDLIBS)
