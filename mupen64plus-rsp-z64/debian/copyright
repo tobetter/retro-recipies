@@ -1,0 +1,29 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: mupen64plus-rsp-z64
+Upstream-Contact: Jon 'wahrhaft' Ring <wahrh4ft@gmail.com>
+Source: https://github.com/mupen64plus/mupen64plus-rsp-z64/
+
+Files: *
+Copyright: 2007, ziggy
+License: GPL-2+
+
+Files: debian/*
+Copyright: 2009-2019, Sven Eckelmann <sven@narfation.org>
+  2009-2019, Tobias Loose <TobiasLoose@gmx.de>
+License: GPL-2+
+
+Files: projects/unix/Makefile
+Copyright: 2007-2008, Jesse 'DarkJezter' Dean
+           2007-2008, Scott 'Tillin9' Knauert
+           2007-2009, Richard 'Richard42' Goedeken <Richard@fascinationsoftware.com>
+           2010, Jon 'wahrhaft' Ring <wahrh4ft@gmail.com>
+License: GPL-2+
+
+License: GPL-2+
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; version 2 dated June, 1991, or (at
+ your option) any later version.
+ .
+ On Debian systems, the complete text of version 2 of the GNU General
+ Public License can be found in '/usr/share/common-licenses/GPL-2'.

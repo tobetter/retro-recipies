@@ -1,0 +1,36 @@
+Source: mupen64plus-rsp-z64
+Section: games
+Priority: optional
+Maintainer: Debian Games Team <pkg-games-devel@lists.alioth.debian.org>
+Uploaders:
+ Sven Eckelmann <sven@narfation.org>,
+ Tobias Loose <TobiasLoose@gmx.de>,
+Standards-Version: 4.4.0
+Homepage: http://mupen64plus.org/
+Vcs-Git: https://github.com/mupen64plus/mupen64plus-rsp-z64.git
+Vcs-Browser: https://github.com/mupen64plus/mupen64plus-rsp-z64.git
+Build-Depends:
+ debhelper-compat (= 12),
+ dpkg-dev (>= 1.16.1.1),
+ libmupen64plus-dev (>= 1.99.5),
+
+Package: mupen64plus-rsp-z64
+Architecture: all
+Multi-Arch: same
+Pre-Depends:
+ ${misc:Pre-Depends},
+Depends:
+ mupen64plus-rsp-abi-2,
+ ${misc:Depends},
+ ${shlibs:Depends},
+Provides:
+ mupen64plus-rsp,
+Description: low-level rsp emulation for mupen64plus
+ N64 Reality Signal Processor instruction level emulation for graphics plugins
+ supporting preprocessed vertex information. It can emulate even unknown or
+ uncommon microcodes, but cannot benefit from faster implementation for the
+ host cpu.
+ .
+ This package also provides mupen64plus-video-z64-hlevideo which can be used
+ together with high level video emulation plugins like arachnoid, rice or
+ glide64.
