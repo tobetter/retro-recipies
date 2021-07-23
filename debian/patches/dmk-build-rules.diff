@@ -1,0 +1,28 @@
+Description: Add build rules for dmk tools
+ Add a Makefile to allow debian/rules to easily build the dmk tools.
+Author: Bas Wijnen <wijnen@debian.org>
+Origin: vendor
+Forwarded: no
+Last-Update: 2017-08-08
+
+Index: openMSX/Contrib/dmk/Makefile
+===================================================================
+--- /dev/null
++++ openMSX/Contrib/dmk/Makefile
+@@ -0,0 +1,16 @@
++TARGETS = analyze-dmk combine-dmk der2dmk dsk2dmk empty-dmk svi2dmk svicpm2dmk
++
++all: $(addprefix build/,$(TARGETS))
++
++CXXFLAGS += -Wall -Wextra -O3 $(shell dpkg-buildflags --get CPPFLAGS) $(shell dpkg-buildflags --get CXXFLAGS)
++LDFLAGS += $(shell dpkg-buildflags --get LDFLAGS)
++
++build/%.o:%.cc Makefile
++	mkdir -p build
++	g++ -c $(CXXFLAGS) $< -o $@
++
++%:%.o Makefile
++	g++ $(LDFLAGS) $< -o $@ $(LDADD)
++
++clean:
++	rm -rf build

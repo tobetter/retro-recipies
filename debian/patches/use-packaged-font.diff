@@ -1,0 +1,71 @@
+Description: Use packaged font instead of bundled
+ OpenMSX bundles its console font.  This patch makes it use the version from the ttf-bitstream-vera package instead.
+Origin: vendor
+Forwarded: not-needed
+Last-Update: 2017-08-05
+
+Index: openMSX/src/console/OSDConsoleRenderer.cc
+===================================================================
+--- openMSX.orig/src/console/OSDConsoleRenderer.cc
++++ openMSX/src/console/OSDConsoleRenderer.cc
+@@ -39,7 +39,7 @@ constexpr int CHAR_BORDER = 4;
+ 
+ // class OSDConsoleRenderer
+ 
+-constexpr string_view defaultFont = "skins/VeraMono.ttf.gz";
++constexpr string_view defaultFont = DEFAULT_FONT;
+ 
+ OSDConsoleRenderer::OSDConsoleRenderer(
+ 		Reactor& reactor_, CommandConsole& console_,
+Index: openMSX/src/console/OSDText.cc
+===================================================================
+--- openMSX.orig/src/console/OSDText.cc
++++ openMSX/src/console/OSDText.cc
+@@ -28,7 +28,7 @@ namespace openmsx {
+ 
+ OSDText::OSDText(Display& display_, const TclObject& name_)
+ 	: OSDImageBasedWidget(display_, name_)
+-	, fontfile("skins/Vera.ttf.gz")
++	, fontfile(DEFAULT_FONT)
+ 	, size(12)
+ 	, wrapMode(NONE), wrapw(0.0), wraprelw(1.0)
+ {
+Index: openMSX/src/openmsx.hh
+===================================================================
+--- openMSX.orig/src/openmsx.hh
++++ openMSX/src/openmsx.hh
+@@ -4,6 +4,8 @@
+ #include "build-info.hh"
+ #include <cstdint>
+ 
++#define DEFAULT_FONT "/usr/share/fonts/truetype/ttf-bitstream-vera/VeraMono.ttf"
++
+ #if PLATFORM_ANDROID
+ #include <android/log.h>
+ #define ad_printf(...) __android_log_print(ANDROID_LOG_INFO, "openMSX", __VA_ARGS__)
+Index: openMSX/share/scripts/_osd_menu.tcl
+===================================================================
+--- openMSX.orig/share/scripts/_osd_menu.tcl
++++ openMSX/share/scripts/_osd_menu.tcl
+@@ -66,7 +66,7 @@ proc menu_create {menudef} {
+ 	set deftextcolor [get_optional menudef "text-color" $default_text_color]
+ 	set selectcolor  [get_optional menudef "select-color" $default_select_color]
+ 	set deffontsize  [get_optional menudef "font-size" 12]
+-	set deffont      [get_optional menudef "font" "skins/Vera.ttf.gz"]
++	set deffont      [get_optional menudef "font" "/usr/share/fonts/truetype/ttf-bitstream-vera/VeraMono.ttf"]
+ 	set bordersize   [get_optional menudef "border-size" 0]
+ 	set on_open      [get_optional menudef "on-open" ""]
+ 	set on_close     [get_optional menudef "on-close" ""]
+Index: openMSX/doc/manual/commands.html
+===================================================================
+--- openMSX.orig/doc/manual/commands.html
++++ openMSX/doc/manual/commands.html
+@@ -3040,7 +3040,7 @@
+ 
+   <h3><a id="consolefont">consolefont</a></h3>
+ 
+-  <p>Change the console font. This should be the filename of a True Type Font. The default value is <code>skins/VeraMono.ttf.gz</code>.</p>
++  <p>Change the console font. This should be the filename of a True Type Font. The default value is <code>/usr/share/fonts/truetype/ttf-bitstream-vera/VeraMono.ttf</code>.</p>
+   <p>Font files of other types than True Type Fonts (TTF) are not supported. The font must also be monospaced.</p>
+ 
+   <div class="subsectiontitle">

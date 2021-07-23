@@ -1,0 +1,33 @@
+Description: Adjust paths to follow FHS.
+Forwarded: not-needed
+Last-Update: 2011-11-11
+
+Index: openMSX/build/custom.mk
+===================================================================
+--- openMSX.orig/build/custom.mk
++++ openMSX/build/custom.mk
+@@ -4,7 +4,8 @@
+ # openMSX is always installed into a single self-contained directory.
+ # But you can change that directory to for example /usr/local/openMSX
+ # or /usr/games/openMSX if you like.
+-INSTALL_BASE:=/opt/openMSX
++INSTALL_BASE:=/usr
++INSTALL_SHARE_DIR:=/usr/share/openmsx
+ 
+ # Add revision number to executable file name? This applies only to
+ # development versions, not to release versions (see version.py).
+@@ -14,8 +15,12 @@ VERSION_EXEC:=false
+ # This link is placed in a location that is typically in a user's path:
+ # /usr/local/bin for system-wide installs and ~/bin for personal installs.
+ # This setting is only relevant on systems that support symbolic links.
+-SYMLINK_FOR_BINARY:=true
++SYMLINK_FOR_BINARY:=false
+ 
+ # Install content of Contrib/ directory?
+ # Currently this contains a version of C-BIOS.
+-INSTALL_CONTRIB:=true
++INSTALL_CONTRIB:=false
++
++INSTALL_DOC_DIR:=/usr/share/doc/openmsx-data
++INSTALL_BINARY_DIR:=/usr/bin
++OPENMSX_INSTALL:=/usr

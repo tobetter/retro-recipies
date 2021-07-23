@@ -1,0 +1,29 @@
+Description: Disable optimization for mips due to slow buildds
+ This patch disables optimization for mips machines, so it compiles before
+ hitting a timeout on the mips buildds.  Unfortunately the mips team seems
+ unwilling to increase the timeout; given that those machines are this slow, it
+ is likely that they could have used the optimization.
+Author: Dejan Latinovic <Dejan.Latinovic@imgtec.com>
+Reviewed-by: Bas Wijnen <wijnen@debian.org>
+Bug-Debian: https://bugs.debian.org/754757
+Forwarded: not-needed
+Last-Update: 2014-10-05
+
+Index: openMSX/build/flavour-debian.mk
+===================================================================
+--- openMSX.orig/build/flavour-debian.mk
++++ openMSX/build/flavour-debian.mk
+@@ -14,7 +14,12 @@ else
+         # Do not enable -O3 to work around GCC bug <http://bugs.debian.org/647552>.
+         CXXFLAGS += -O2
+     else
+-        CXXFLAGS += -O3
++        ifeq ($(DEB_HOST_ARCH_CPU),mips)
++            # Use -O0 to reduce time of compilation on mips <https://bugs.debian.org/754757>
++            CXXFLAGS += -O0
++        else
++            CXXFLAGS += -O3
++        endif
+     endif
+ endif
+ 

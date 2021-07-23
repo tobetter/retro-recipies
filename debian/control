@@ -1,0 +1,58 @@
+Source: openmsx
+Section: otherosfs
+Priority: optional
+Maintainer: Bas Wijnen <wijnen@debian.org>
+Build-Depends: debhelper (>= 10),
+	dpkg-dev (>= 1.15.7),
+	docbook-to-man,
+	libsdl2-dev,
+	libpng-dev,
+	tcl-dev,
+	libgl1-mesa-dev | libgl-dev,
+	libxml2-dev,
+	libglew-dev,
+	libsdl2-ttf-dev,
+	python3,
+	libvorbis-dev,
+	libtheora-dev (>= 1.0),
+	libogg-dev,
+	libao-dev,
+	libfreetype6-dev
+Standards-Version: 4.0.0
+Vcs-Git: https://github.com/openMSX/openMSX.git
+Homepage: https://openmsx.org
+
+Package: openmsx
+Architecture: all
+Depends: openmsx-data (= ${source:Version}), cbios (>= 0.23), ${shlibs:Depends}, ${misc:Depends}
+Replaces: openmsx-data (<< ${source:Version})
+Suggests: openmsx-catapult, openmsx-debugger, dmktools
+Provides: msx-emulator
+Description: MSX emulator that aims for perfection
+ openMSX is an open source MSX emulator that uses a unique emulation model,
+ which tries to achieve the highest level of accuracy possible. It allows
+ emulating a large number of different MSX machines. Combined with the
+ C-BIOS ROM-files that are available in a separate package, you can run game
+ ROM-files without the need for non-free BIOS ROM files.
+
+Package: openmsx-data
+Architecture: all
+Depends: ${misc:Depends}, ttf-bitstream-vera
+Recommends: openmsx
+Description: datafiles for openMSX, an MSX emulator
+ openMSX is an open source MSX emulator that uses a unique emulation model,
+ which tries to achieve the highest level of accuracy possible.
+ .
+ This package provides data that openmsx needs to run.
+
+Package: dmktools
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Recommends: openmsx
+Conflicts: openmsx (<< 0.14.0-2)
+Description: tools for manipulating floppy disk images in the dmk format
+ Emulators such as OpenMSX attempt to emulate a real machine as best as
+ possible. Some copy protection schemes rely on unformatted or bad sectors on
+ floppy disks. The dmk format allows disk images to contain such unusual
+ configurations. This package contains tools for generating and manipulating
+ dmk image files.

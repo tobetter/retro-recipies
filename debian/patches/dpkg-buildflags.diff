@@ -1,0 +1,31 @@
+Description: Add Debian build flavour, that respects dpkg-builflags.
+Author: Jakub Wilk <jwilk@debian.org>
+Forwarded: not-needed
+Last-Update: 2011-11-11
+
+Index: openMSX/build/flavour-debian.mk
+===================================================================
+--- /dev/null
++++ openMSX/build/flavour-debian.mk
+@@ -0,0 +1,21 @@
++LDFLAGS += \
++    $(shell dpkg-buildflags --get LDFLAGS | sed -e 's/-Wl,//g')
++
++CXXFLAGS += \
++    $(shell dpkg-buildflags --get CFLAGS | sed -e 's/ *-O[0-3] */ /') \
++    $(shell dpkg-buildflags --get CPPFLAGS)
++
++DEB_HOST_ARCH_CPU ?= $(shell dpkg-architecture -qDEB_HOST_ARCH_CPU)
++
++ifneq ($(filter noopt,$(DEB_BUILD_OPTIONS)),)
++    CXXFLAGS += -O0
++else
++    ifeq ($(DEB_HOST_ARCH_CPU),ia64)
++        # Do not enable -O3 to work around GCC bug <http://bugs.debian.org/647552>.
++        CXXFLAGS += -O2
++    else
++        CXXFLAGS += -O3
++    endif
++endif
++
++OPENMSX_STRIP := false # Stripping will be handled by dh_strip.

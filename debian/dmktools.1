@@ -1,0 +1,71 @@
+.\" This manpage is Copyright (C) 2017 Bas Wijnen <wijnen@debian.org>
+.\"
+.\" %%%LICENSE_START(VERBATIM)
+.\" This program is free software: you can redistribute it and/or modify
+.\" it under the terms of the GNU General Public License as published by
+.\" the Free Software Foundation, either version 3 of the License, or
+.\" (at your option) any later version.
+.\" %%%LICENSE_END
+.\"
+.\"
+.TH DMKTOOLS 1 2018-12-20
+.SH NAME
+empty-dmk, dsk2dmk, svi2dmk, svicpm2dmk, der2dmk, combine-dmk, analyze-dmk \- Tools for handling DMK disk image files
+.SH SYNOPSIS
+.nf
+.BI "empty-dmk " "file.dmk"
+.BI "dsk2dmk " "file.dsk" " " "file.dmk"
+.BI "svi2dmk " "file.dsk" " " "file.dmk"
+.BI "svicpm2dmk " "file.dsk" " " "file.dmk"
+.BI "der2dmk " "file.dsk" " " "file.der" " " "file.dmk"
+.BI "combine-dmk"
+.BI "analyze-dmk " "file.dmk"
+.fi
+.PD
+.SH DESCRIPTION
+These tools are used to handle DMK disk images.  Those images can represent strangely formatted disks and are used by
+.IR openmsx (1)
+to allow correct emulation of disks which use those features for copy protection.
+.PP
+All tools except
+.I combine-dmk
+have a
+.I --help
+argument which explains their usage.
+.PP
+.B empty-dmk
+creates a new empty DMK image file.
+.PP
+.B dsk2dmk
+creates a new DMK image file and initializes it with the contents of a DSK
+image file.
+.PP
+.B svi2dmk
+creates a new DMK image file and initializes it with the contents of a special image file.  See
+.IR "svi2dmk --help" " for more information."
+.PP
+.B svicpm2dmk
+creates a new DMK image file and initializes it with the contents of a special image file (CP/M version).  See
+.IR "svicpm2dmk --help" " for more information."
+.PP
+.B der2dmk
+creates a new DMK image file and initializes it with the contents of a DSK
+image file.  In addition, the error state from a DER disk error file is used to
+initialize the disk's error state.
+.PP
+.B combine-dmk
+reads a series of files named
+.I DMK-tt-h.DAT
+where
+.I tt
+is the track number, and
+.I h
+is the head, and creates a DMK image file named
+.IR out.dmk ,
+which is initialized with the data from those files.
+.PP
+.B analyze-dmk
+reads a DMK image file and prints statistics about it to the standard output.
+
+.SH SEE ALSO
+.BR openmsx (1)

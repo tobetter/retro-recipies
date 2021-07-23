@@ -1,0 +1,35 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@ --parallel
+
+override_dh_auto_build:
+	dh_testdir
+	$(MAKE) V=2 OPENMSX_FLAVOUR=debian
+	docbook-to-man doc/openmsx.sgml > debian/openmsx.1
+	$(MAKE) -C Contrib/dmk
+
+override_dh_auto_clean:
+	dh_testdir
+	dh_testroot
+	$(MAKE) clean
+	rm -rf Contrib/dmk/build/
+	rm -rf derived/
+	rm -f debian/openmsx.1
+	rm -rf build/__pycache__
+	dh_clean 
+
+override_dh_auto_install:
+	$(MAKE) install DESTDIR=$(CURDIR)/debian/tmp OPENMSX_FLAVOUR=debian
+	rm debian/tmp/usr/share/openmsx/skins/Vera.ttf.gz
+	rm debian/tmp/usr/share/openmsx/skins/VeraMono.ttf.gz
+	rm debian/tmp/usr/share/doc/openmsx-data/release-history.txt
+	rm debian/tmp/usr/share/doc/openmsx-data/GPL.txt
+	dh_install -X release-history.txt
+	dh_installchangelogs -i doc/release-history.txt
+	dh_installman -a debian/openmsx.1
+	dh_link -a usr/share/doc/openmsx-data usr/share/doc/openmsx
+
+override_dh_auto_test:
+	# No testsuite available.
+	# This makes sure dh doesn't attempt to run it anyway (see #718133)

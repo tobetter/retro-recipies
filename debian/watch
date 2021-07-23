@@ -1,0 +1,3 @@
+version=3
+opts="filenamemangle=s/(?:.*)RELEASE_(.*)/openmsx-$1/,uversionmangle=s/_/./g" \
+https://github.com/openMSX/openMSX/releases/(?:.*?)_([0-9_]+).tar.gz debian uupdate

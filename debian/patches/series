@@ -1,0 +1,5 @@
+fhs.diff
+dpkg-buildflags.diff
+no-mips-optimization.patch
+use-packaged-font.diff
+dmk-build-rules.diff
