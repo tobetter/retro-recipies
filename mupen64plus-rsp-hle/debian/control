@@ -1,0 +1,33 @@
+Source: mupen64plus-rsp-hle
+Section: games
+Priority: optional
+Maintainer: Debian Games Team <pkg-games-devel@lists.alioth.debian.org>
+Uploaders:
+ Sven Eckelmann <sven@narfation.org>,
+ Tobias Loose <TobiasLoose@gmx.de>,
+ Dongjin Kim <tobetter@gmail.com>,
+Standards-Version: 4.4.0
+Homepage: http://mupen64plus.org/
+Vcs-Git: https://github.com/mupen64plus/mupen64plus-rsp-hle.git
+Vcs-Browser: https://github.com/mupen64plus/mupen64plus-rsp-hle.git
+Build-Depends:
+ debhelper-compat (= 12),
+ dpkg-dev (>= 1.16.1.1),
+ libmupen64plus-dev (>= 1.99.5),
+
+Package: mupen64plus-rsp-hle
+Architecture: all
+Multi-Arch: same
+Pre-Depends:
+ ${misc:Pre-Depends},
+Depends:
+ mupen64plus-rsp-abi-2,
+ ${misc:Depends},
+ ${shlibs:Depends},
+Provides:
+ mupen64plus-rsp,
+Description: high-level rsp emulation for mupen64plus
+ N64 Reality Signal Processor function level emulation for graphics plugins
+ supporting vertex processing by their own. It supports memory and register
+ initialisation, audio and display lists processing including jpeg and mp3
+ decoding for common microcodes.
