@@ -1,0 +1,28 @@
+From: Sven Eckelmann <sven@narfation.org>
+Date: Mon, 29 Jul 2019 07:44:45 +0200
+Subject: Fix GNU troff L(in)k compatibility of manpage
+
+The manpage was written with mdoc compatibility in mind. But Debian is
+using GNU troff - which is not 100% compatible with mdoc. The mdoc manpage
+describes the compatibility for Lk as:
+
+> Lk only accepts a single link-name argument; the remainder is misformatted.
+
+All additional words on this line must therefore be dropped in Debian
+---
+ doc/mupen64plus.6 | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/doc/mupen64plus.6 b/doc/mupen64plus.6
+index 564b4b4..a5e9681 100644
+--- a/doc/mupen64plus.6
++++ b/doc/mupen64plus.6
+@@ -29,7 +29,7 @@ Glide64Mk2, included with the distribution
+ .El
+ .Pp
+ The most current documentation can be found at the project\(cqs
+-.Lk https://code.google.com/p/mupen64plus/ homepage .
++.Lk https://code.google.com/p/mupen64plus/ homepage
+ .Pp
+ The options are as follows:
+ .Bl -tag -width x

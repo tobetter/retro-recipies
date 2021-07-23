@@ -1,0 +1,25 @@
+From: Sven Eckelmann <sven@narfation.org>
+Date: Tue, 11 Sep 2012 09:37:08 +0200
+Subject: Add printf-format attribute
+
+The compiler needs to get more information for function declaration to
+help to find printf specific format attacks.
+
+Forwarded: not-needed
+---
+ src/main.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/main.h b/src/main.h
+index 5ab3752..b2db67c 100644
+--- a/src/main.h
++++ b/src/main.h
+@@ -22,7 +22,7 @@
+ #ifndef __MAIN_H__
+ #define __MAIN_H__
+ 
+-extern void DebugMessage(int level, const char *message, ...);
++extern void DebugMessage(int level, const char *message, ...)  __attribute__ ((format (printf, 2, 3)));
+ extern void DebugCallback(void *Context, int level, const char *message);
+ 
+ extern int  g_Verbose;
