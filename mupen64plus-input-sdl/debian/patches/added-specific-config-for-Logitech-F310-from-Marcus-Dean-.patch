@@ -10,11 +10,9 @@ Origin: upstream, https://github.com/mupen64plus/mupen64plus-input-sdl/commit/bc
  data/InputAutoCfg.ini | 26 +++++++++++++++++++++++++-
  1 file changed, 25 insertions(+), 1 deletion(-)
 
-diff --git a/data/InputAutoCfg.ini b/data/InputAutoCfg.ini
-index 5efd57f..3111c97 100644
 --- a/data/InputAutoCfg.ini
 +++ b/data/InputAutoCfg.ini
-@@ -530,6 +530,31 @@ Rumblepak switch = button(7)
+@@ -711,6 +711,31 @@
  X Axis = axis(0-,0+)
  Y Axis = axis(1-,1+)
  
@@ -46,11 +44,3 @@ index 5efd57f..3111c97 100644
  [Logitech Gamepad F710]
  plugged = True
  plugin = 2
-@@ -1407,7 +1432,6 @@ Y Axis = axis(1-,1+)
- [Thrustmaster, Inc. Controller]
- [Logitech Xbox Cordless Controller]
- [Logitech Compact Controller for Xbox]
--[Logitech Gamepad F310]
- [Mad Catz Controller (unverified)]
- [InterAct 'PowerPad Pro' X-Box pad (Germany)]
- [Mad Catz Control Pad]

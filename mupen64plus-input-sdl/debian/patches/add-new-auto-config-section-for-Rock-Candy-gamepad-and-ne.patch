@@ -8,19 +8,9 @@ Origin: upstream, https://github.com/mupen64plus/mupen64plus-input-sdl/commit/b6
  data/InputAutoCfg.ini | 26 ++++++++++++++++++++++++++
  1 file changed, 26 insertions(+)
 
-diff --git a/data/InputAutoCfg.ini b/data/InputAutoCfg.ini
-index 934ef8c..99a913e 100644
 --- a/data/InputAutoCfg.ini
 +++ b/data/InputAutoCfg.ini
-@@ -228,6 +228,7 @@ Y Axis = axis(1-,1+)
- 
- ; raphnet technologies USB converter (http://www.raphnet-tech.com/)
- [GC/N64_USB]
-+[GC/N64 to USB, v2.9]
- plugged = True
- plugin = 2
- mouse = False
-@@ -946,6 +947,31 @@ Rumblepak switch = key(114)
+@@ -1424,6 +1424,31 @@
  X Axis = axis(0-,0+)
  Y Axis = axis(1-,1+)
  

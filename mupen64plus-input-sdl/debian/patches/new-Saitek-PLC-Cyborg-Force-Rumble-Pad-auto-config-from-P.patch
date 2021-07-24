@@ -8,13 +8,11 @@ Origin: upstream, https://github.com/mupen64plus/mupen64plus-input-sdl/commit/68
  data/InputAutoCfg.ini | 25 +++++++++++++++++++++++++
  1 file changed, 25 insertions(+)
 
-diff --git a/data/InputAutoCfg.ini b/data/InputAutoCfg.ini
-index 2569f89..934ef8c 100644
 --- a/data/InputAutoCfg.ini
 +++ b/data/InputAutoCfg.ini
-@@ -1073,6 +1073,31 @@ Rumblepak switch = axis(10+)
- X Axis = axis(0-,0+)
+@@ -1669,6 +1669,31 @@
  Y Axis = axis(1-,1+)
+ X Axis = axis(0-,0+)
  
 +[Saitek PLC Cyborg Force Rumble Pad]
 +plugged = True

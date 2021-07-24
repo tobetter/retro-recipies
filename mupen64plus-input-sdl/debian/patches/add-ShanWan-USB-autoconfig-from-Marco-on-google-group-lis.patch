@@ -8,11 +8,9 @@ Origin: upstream, https://github.com/mupen64plus/mupen64plus-input-sdl/commit/d8
  data/InputAutoCfg.ini | 25 +++++++++++++++++++++++++
  1 file changed, 25 insertions(+)
 
-diff --git a/data/InputAutoCfg.ini b/data/InputAutoCfg.ini
-index ea90a69..e3ee62a 100644
 --- a/data/InputAutoCfg.ini
 +++ b/data/InputAutoCfg.ini
-@@ -1196,6 +1196,31 @@ Rumblepak switch = axis(10+)
+@@ -1792,6 +1792,31 @@
  X Axis = axis(0-,0+)
  Y Axis = axis(1-,1+)
  
