@@ -19,6 +19,10 @@ ifeq ($(DEB_HOST_ARCH),armhf)
 MAKEOPTIONS += USE_GLES=1 NEON=1
 endif
 
+ifeq ($(DEB_HOST_ARCH),arm64)
+MAKEOPTIONS += USE_GLES=1
+endif
+
 binary binary-arch binary-indep build build-arch build-indep clean install install-arch install-indep:
 	dh $@ --sourcedirectory="projects/unix"
 
