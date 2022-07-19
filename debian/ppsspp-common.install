@@ -14,3 +14,7 @@ obj_qt/assets/zip.png               usr/share/ppsspp/assets
 obj_qt/assets/lang/*                usr/share/ppsspp/assets/lang
 obj_qt/assets/shaders/*             usr/share/ppsspp/assets/shaders
 obj_qt/assets/flash0/*              usr/share/ppsspp/assets/flash0
+obj_qt/assets/font_atlas.meta       usr/share/ppsspp/assets
+obj_qt/assets/font_atlas.zim        usr/share/ppsspp/assets
+obj_qt/assets/asciifont_atlas.meta  usr/share/ppsspp/assets
+obj_qt/assets/asciifont_atlas.zim   usr/share/ppsspp/assets
