@@ -1,0 +1,21 @@
+Source: dosbox-x
+Section: games
+Priority: optional
+Maintainer: pitiSeb <unknown@email.com>
+Uploaders: Dongjin Kim <tobetter@gmail.com>
+Vcs-Git: https://github.com/joncampbell123/dosbox-x.git
+Vcs-Browser: https://github.com/joncampbell123/dosbox-x.git
+Build-Depends: debhelper (>= 9),
+	cmake (>= 2.8.9),
+	libncurses-dev,
+	libsdl2-dev
+Standards-Version: 3.9.5
+Homepage: http://www.sfml-dev.org/
+
+Package: dosbox-x
+Section: libs
+Architecture: arm64
+Multi-Arch: same
+Description: Linux Userspace x86_64 Emulator with a twist
+ Box64 lets you run x86_64 Linux programs (such as games) on non-x86_64 Linux systems,
+ like ARM (host system needs to be 64bit little-endian).

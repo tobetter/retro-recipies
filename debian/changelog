@@ -1,0 +1,5 @@
+dosbox-x (2022.12.26) stable; urgency=medium
+
+  * Initial release. (Closes: #XXXXXX)
+
+ -- Dongjin Kim <tobetter@gmail.com>  Thu, 12 Jan 2023 01:30:53 +0900
