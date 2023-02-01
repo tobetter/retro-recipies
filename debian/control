@@ -33,6 +33,7 @@ Build-Depends:	debhelper (>= 9),
 				libxrandr-dev,
 				portaudio19-dev,
 				qtbase5-private-dev,
+				systemtap-sdt-dev,
 				zlib1g-dev (>= 1.2.8)
 Standards-Version: 3.9.8
 Homepage: http://dolphin-emu.org/
