@@ -1,0 +1,14 @@
+#!/usr/bin/make -f
+
+# See issue #2 in github (libretro/libretro-fba)
+export DEB_CXXFLAGS_MAINT_STRIP=-O2 -Werror=format-security
+export DEB_CFLAGS_MAINT_STRIP=-O2 -Werror=format-security
+#export DEB_CXXFLAGS_MAINT_APPEND=-Wno-error
+#export DEB_CFLAGS_MAINT_APPEND=-Wno-error
+
+ARCH=$(shell dpkg-architecture -qDEB_HOST_ARCH)
+
+GIT_HASH := $(shell dpkg-parsechangelog | sed -rne 's,^Version: (.*),\1, p' | sed s/-/\\n\ /g | tail -n 2 | head -n 1)
+
+%:
+	dh $@ --parallel

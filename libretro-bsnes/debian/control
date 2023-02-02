@@ -1,0 +1,17 @@
+Source: libretro-bsnes
+Section: games
+Priority: optional
+Maintainer: Debian Games Team <pkg-games-devel@lists.alioth.debian.org>
+Uploaders: Paul Preuss <paul@dokomi.de>
+Build-Depends: debhelper (>= 9), zlib1g-dev
+Standards-Version: 3.9.8
+Vcs-Git: https://github.com/libretro/bsnes-libretro.git
+
+Package: libretro-bsnes
+Architecture: any
+Multi-Arch: same
+Depends: retroarch | libretro-frontend, ${misc:Depends}, ${shlibs:Depends}
+Replaces: libretro-fba (<< 0.2.97.39-r201701270103-c4c9fb5-20~)
+Breaks: libretro-fba (<< 0.2.97.39-r201701270103-c4c9fb5-20~)
+Description: Libretro wrapper for BSNES
+ ..

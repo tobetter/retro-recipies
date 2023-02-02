@@ -1,0 +1,3 @@
+#!/bin/sh
+echo bsnes_libretro.so \
+	"usr/lib/$(dpkg-architecture -qDEB_HOST_MULTIARCH)/libretro"
