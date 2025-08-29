@@ -31,7 +31,7 @@ CMAKE_OPTIONS =                                   \
 	-Dbindir=/usr/games                           \
 	-Ddatadir=/usr/share/games/dolphin-emu        \
 	-DUSE_SHARED_ENET=ON                          \
-	-DENABLE_LLVM=0
+	-DENABLE_LLVM=OFF
 
 ARCH=$(shell dpkg-architecture -qDEB_HOST_ARCH)
 
